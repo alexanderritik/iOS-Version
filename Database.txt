@@ -1,0 +1,49 @@
+
+
+User (user.uid) ->{
+			username : String 
+			email : String
+			phone : String
+			likes : Int
+			totalPost : Int
+			views : Int
+			image : URL?
+
+			question {
+				questionId : uid
+			}
+
+			answer {
+				answerId : uid
+			}
+
+			saved {
+				savedId : questionId
+			}
+		}
+
+Question (questionId) -> {
+			questionBy : user.uid
+			questionTitle : String
+			questionDetails : String
+			questionImage : [url]
+			views : Int
+			upvote : Int
+			downvote  : Int
+			
+			answerID : {
+				answerId : answer.uid
+			}
+		}
+
+
+Answer (answerId)-> {
+			answerBy : user.uid
+			answerTitle : String
+			answerDetails : String
+			answerImage : [url]
+			views : Int
+			upvote : Int
+			downvote  : Int
+ 		}
+ 		

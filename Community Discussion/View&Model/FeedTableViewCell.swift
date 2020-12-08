@@ -30,7 +30,7 @@ class FeedTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         containerView.layer.cornerRadius = CGFloat(8)
-        containerView.layer.borderColor = UIColor.gray.cgColor
+        profileImage.layer.cornerRadius = profileImage.frame.width/2
         // Initialization code
     }
 

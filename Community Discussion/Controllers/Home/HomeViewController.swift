@@ -52,4 +52,20 @@ extension HomeViewController :  UITableViewDataSource, UITableViewDelegate {
             
             return feedTableViewCell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+         tableView.deselectRow(at: indexPath, animated: true)
+        
+        // opening the full questions
+        openFullQuery()
+    }
+    
+    func openFullQuery(){
+        let vcStoryboard = UIStoryboard(name: "QuestionPage", bundle: nil)
+        let vc = vcStoryboard.instantiateViewController(identifier: "QuestionPage") as! QuestionAnswerViewController
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav , animated: true)
+       }
 }

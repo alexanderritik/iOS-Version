@@ -19,10 +19,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQC-9A-dAp">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="288"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_tab_icon" translatesAutoresizingMaskIntoConstraints="NO" id="b8n-5B-oB0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="b8n-5B-oB0">
                                 <rect key="frame" x="20" y="20" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="1qC-qR-jRO"/>
                                     <constraint firstAttribute="width" constant="30" id="iaL-Br-wPO"/>
                                     <constraint firstAttribute="width" secondItem="b8n-5B-oB0" secondAttribute="height" multiplier="1:1" id="pgs-EX-IBI"/>
                                 </constraints>
@@ -270,6 +269,6 @@
         <image name="bubble.left.and.bubble.right" catalog="system" width="128" height="96"/>
         <image name="eye" catalog="system" width="128" height="81"/>
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
-        <image name="profile_tab_icon" width="46" height="48"/>
+        <image name="profile" width="64" height="64"/>
     </resources>
 </document>

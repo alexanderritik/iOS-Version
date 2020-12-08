@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
-    var posts : [[String:String]] = [[String:String]]()
+    var posts : [[String]] = [["Ritik"],["Ritik"],["Ritik"],["Ritik"],["Ritik"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,9 @@ extension ProfileViewController :  UITableViewDataSource, UITableViewDelegate {
         if indexPath.section == 0 {
             
             let profileHeaderTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ProfileHeaderTableViewCell") as! MainProfileTableViewCell
-        
+
+            profileHeaderTableViewCell.settingDelegate = self
+
             return profileHeaderTableViewCell
         }
             
@@ -84,4 +86,29 @@ extension ProfileViewController :  UITableViewDataSource, UITableViewDelegate {
         }
         
     }
+}
+
+extension ProfileViewController : ProfileSettingDelegate {
+    
+    func profileSettingDidTouch() {
+    print("profile did touch setting")
+        let alert = UIAlertController(title: "Setting", message: "option available", preferredStyle: .actionSheet)
+            
+        let logout = UIAlertAction(title: "Logout", style: .default) {[weak self] _ in
+            guard let strongSelf = self else { return }
+//            strongSelf.doYouReallyWantToExist()
+        }
+        
+        let setting = UIAlertAction(title: "Setting", style: .default) { _ in
+            print("In the setting")
+        }
+        
+        let cancel = UIAlertAction(title: "No", style: .cancel)
+        
+        alert.addAction(logout)
+        alert.addAction(setting)
+        alert.addAction(cancel)
+        present(alert,animated: true)
+    }
+    
 }

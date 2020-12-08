@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AEE802BCEF093C61F1744BA /* Pods_Community_Discussion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92213F4B3FC5AFDB347C871F /* Pods_Community_Discussion.framework */; };
 		26533E652545BB1E00EE7B1E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26533E642545BB1E00EE7B1E /* RegisterViewController.swift */; };
 		26533E682545BC8300EE7B1E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26533E672545BC8300EE7B1E /* Profile.storyboard */; };
 		26533E6D2545CFE600EE7B1E /* MainProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26533E6B2545CFE600EE7B1E /* MainProfileTableViewCell.swift */; };
@@ -24,6 +25,12 @@
 		26AA13FC2544C87D00BF4F8F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA13FB2544C87D00BF4F8F /* SearchViewController.swift */; };
 		26AA13FE2544C88900BF4F8F /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA13FD2544C88900BF4F8F /* ActivityViewController.swift */; };
 		26AA14012544C89E00BF4F8F /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA14002544C89E00BF4F8F /* NewPostViewController.swift */; };
+		26B4A092257CD28C0009A5DC /* QuestionPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26B4A091257CD28C0009A5DC /* QuestionPage.storyboard */; };
+		26B4A094257CEC5F0009A5DC /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26B4A093257CEC5F0009A5DC /* Search.storyboard */; };
+		26B4A096257D01950009A5DC /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4A095257D01950009A5DC /* Protocol.swift */; };
+		26B4A098257F9EF10009A5DC /* NewPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26B4A097257F9EF10009A5DC /* NewPost.storyboard */; };
+		26B4A09A257FB4150009A5DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26B4A099257FB4150009A5DC /* GoogleService-Info.plist */; };
+		26C1EDE02549B83A00D51AA0 /* QuestionAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C1EDDF2549B83A00D51AA0 /* QuestionAnswerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +53,15 @@
 		26AA13FB2544C87D00BF4F8F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		26AA13FD2544C88900BF4F8F /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		26AA14002544C89E00BF4F8F /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		26B4A091257CD28C0009A5DC /* QuestionPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionPage.storyboard; sourceTree = "<group>"; };
+		26B4A093257CEC5F0009A5DC /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		26B4A095257D01950009A5DC /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		26B4A097257F9EF10009A5DC /* NewPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPost.storyboard; sourceTree = "<group>"; };
+		26B4A099257FB4150009A5DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		26C1EDDF2549B83A00D51AA0 /* QuestionAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerViewController.swift; sourceTree = "<group>"; };
+		33E581577DEB842C97DD8656 /* Pods-Community Discussion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Community Discussion.release.xcconfig"; path = "Target Support Files/Pods-Community Discussion/Pods-Community Discussion.release.xcconfig"; sourceTree = "<group>"; };
+		92213F4B3FC5AFDB347C871F /* Pods_Community_Discussion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Community_Discussion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD0DD9565EF2570F3AA6761 /* Pods-Community Discussion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Community Discussion.debug.xcconfig"; path = "Target Support Files/Pods-Community Discussion/Pods-Community Discussion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AEE802BCEF093C61F1744BA /* Pods_Community_Discussion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,21 +79,24 @@
 		26533E662545BBE200EE7B1E /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				26533E6F2545D5B300EE7B1E /* Profile */,
+				26533E6F2545D5B300EE7B1E /* TabPage */,
 				26AA13E02544C76F00BF4F8F /* Main.storyboard */,
 				26AA13E32544C77500BF4F8F /* Assets.xcassets */,
 				26AA13E52544C77500BF4F8F /* LaunchScreen.storyboard */,
+				26B4A091257CD28C0009A5DC /* QuestionPage.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
 		};
-		26533E6F2545D5B300EE7B1E /* Profile */ = {
+		26533E6F2545D5B300EE7B1E /* TabPage */ = {
 			isa = PBXGroup;
 			children = (
 				26533E672545BC8300EE7B1E /* Profile.storyboard */,
 				26533E702545DD4400EE7B1E /* Home.storyboard */,
+				26B4A093257CEC5F0009A5DC /* Search.storyboard */,
+				26B4A097257F9EF10009A5DC /* NewPost.storyboard */,
 			);
-			path = Profile;
+			path = TabPage;
 			sourceTree = "<group>";
 		};
 		26AA13CE2544C76F00BF4F8F = {
@@ -84,6 +104,8 @@
 			children = (
 				26AA13D92544C76F00BF4F8F /* Community Discussion */,
 				26AA13D82544C76F00BF4F8F /* Products */,
+				30ED792E403A98B3B8CEE67C /* Pods */,
+				A97F6A72B3EABE2F0C917656 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,10 +120,13 @@
 		26AA13D92544C76F00BF4F8F /* Community Discussion */ = {
 			isa = PBXGroup;
 			children = (
+				26C1EDDE2549B7AD00D51AA0 /* Data */,
 				26AA13F02544C79300BF4F8F /* Resources */,
 				26AA13EF2544C78600BF4F8F /* View&Model */,
 				26AA13EE2544C77F00BF4F8F /* Controllers */,
 				26AA13E82544C77500BF4F8F /* Info.plist */,
+				26B4A095257D01950009A5DC /* Protocol.swift */,
+				26B4A099257FB4150009A5DC /* GoogleService-Info.plist */,
 			);
 			path = "Community Discussion";
 			sourceTree = "<group>";
@@ -116,6 +141,7 @@
 				26AA13F22544C82400BF4F8F /* Profile */,
 				26AA13DE2544C76F00BF4F8F /* ViewController.swift */,
 				26533E642545BB1E00EE7B1E /* RegisterViewController.swift */,
+				26C1EDDF2549B83A00D51AA0 /* QuestionAnswerViewController.swift */,
 				26533E662545BBE200EE7B1E /* StoryBoards */,
 			);
 			path = Controllers;
@@ -180,6 +206,31 @@
 			path = "New Post";
 			sourceTree = "<group>";
 		};
+		26C1EDDE2549B7AD00D51AA0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		30ED792E403A98B3B8CEE67C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EAD0DD9565EF2570F3AA6761 /* Pods-Community Discussion.debug.xcconfig */,
+				33E581577DEB842C97DD8656 /* Pods-Community Discussion.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A97F6A72B3EABE2F0C917656 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92213F4B3FC5AFDB347C871F /* Pods_Community_Discussion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,9 +238,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26AA13EB2544C77500BF4F8F /* Build configuration list for PBXNativeTarget "Community Discussion" */;
 			buildPhases = (
+				46FEA0F98326A3C76B2F9188 /* [CP] Check Pods Manifest.lock */,
 				26AA13D32544C76F00BF4F8F /* Sources */,
 				26AA13D42544C76F00BF4F8F /* Frameworks */,
 				26AA13D52544C76F00BF4F8F /* Resources */,
+				0529C49F2515A1F805902A88 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,12 +295,58 @@
 				26533E712545DD4400EE7B1E /* Home.storyboard in Resources */,
 				26AA13E42544C77500BF4F8F /* Assets.xcassets in Resources */,
 				26533E772545F6BB00EE7B1E /* FeedTableViewCell.xib in Resources */,
+				26B4A098257F9EF10009A5DC /* NewPost.storyboard in Resources */,
 				26533E682545BC8300EE7B1E /* Profile.storyboard in Resources */,
+				26B4A092257CD28C0009A5DC /* QuestionPage.storyboard in Resources */,
+				26B4A09A257FB4150009A5DC /* GoogleService-Info.plist in Resources */,
+				26B4A094257CEC5F0009A5DC /* Search.storyboard in Resources */,
 				26AA13E22544C76F00BF4F8F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0529C49F2515A1F805902A88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Community Discussion/Pods-Community Discussion-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Community Discussion/Pods-Community Discussion-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Community Discussion/Pods-Community Discussion-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46FEA0F98326A3C76B2F9188 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Community Discussion-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		26AA13D32544C76F00BF4F8F /* Sources */ = {
@@ -255,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26AA13FC2544C87D00BF4F8F /* SearchViewController.swift in Sources */,
+				26B4A096257D01950009A5DC /* Protocol.swift in Sources */,
 				26533E762545F6BB00EE7B1E /* FeedTableViewCell.swift in Sources */,
 				26533E652545BB1E00EE7B1E /* RegisterViewController.swift in Sources */,
 				26AA13FA2544C87100BF4F8F /* HomeViewController.swift in Sources */,
@@ -262,6 +362,7 @@
 				26AA13DB2544C76F00BF4F8F /* AppDelegate.swift in Sources */,
 				26AA13FE2544C88900BF4F8F /* ActivityViewController.swift in Sources */,
 				26AA14012544C89E00BF4F8F /* NewPostViewController.swift in Sources */,
+				26C1EDE02549B83A00D51AA0 /* QuestionAnswerViewController.swift in Sources */,
 				26AA13F42544C83B00BF4F8F /* ProfileViewController.swift in Sources */,
 				26533E6D2545CFE600EE7B1E /* MainProfileTableViewCell.swift in Sources */,
 				26AA13DD2544C76F00BF4F8F /* SceneDelegate.swift in Sources */,
@@ -406,6 +507,7 @@
 		};
 		26AA13EC2544C77500BF4F8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAD0DD9565EF2570F3AA6761 /* Pods-Community Discussion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -424,6 +526,7 @@
 		};
 		26AA13ED2544C77500BF4F8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33E581577DEB842C97DD8656 /* Pods-Community Discussion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -24,11 +24,13 @@ class ViewController: UIViewController {
         
         let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
         
+        let searchStoryboard = UIStoryboard(name: "Search", bundle: nil)
+        
         let homeVC = homeStoryboard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
         
         let profileVC = profileStoryboard.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
         
-        let searchVC = SearchViewController()
+        let searchVC = searchStoryboard.instantiateViewController(withIdentifier: "Search") as! SearchViewController
         
         let newPostVC =  NewPostViewController()
         

@@ -22,11 +22,19 @@ class MainProfileTableViewCell: UITableViewCell {
     
     @IBOutlet var viewsCount: UILabel!
     
+    var settingDelegate : ProfileSettingDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        profilePic.layer.borderColor = UIColor.gray.cgColor
+        profilePic.layer.cornerRadius = profilePic.frame.width/2
+        profilePic.layer.borderWidth = CGFloat(3)
     }
     
     @IBAction func settingButtonDidTouch(_ sender: Any) {
+        print("did touch setting")
+        settingDelegate?.profileSettingDidTouch()
     }
 }

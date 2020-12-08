@@ -7,6 +7,11 @@ target 'Community Discussion' do
 
   # Pods for Community Discussion
 
-
+	pod 'Firebase/Analytics'
+	pod 'Firebase/Core'
+ 	pod 'Firebase/Auth'
+ 	pod 'Firebase/Firestore'
+	pod 'FirebaseFirestoreSwift'
+	pod 'Firebase/Storage'
 
 end
