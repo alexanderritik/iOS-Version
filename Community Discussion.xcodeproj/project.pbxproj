@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1AEE802BCEF093C61F1744BA /* Pods_Community_Discussion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92213F4B3FC5AFDB347C871F /* Pods_Community_Discussion.framework */; };
+		260290752580A00100D279F4 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260290742580A00100D279F4 /* AnswerViewController.swift */; };
+		260290772580A3A500D279F4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260290762580A3A500D279F4 /* MenuViewController.swift */; };
+		260290792580F30700D279F4 /* FirestoreReferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260290782580F30700D279F4 /* FirestoreReferenceManager.swift */; };
 		26533E652545BB1E00EE7B1E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26533E642545BB1E00EE7B1E /* RegisterViewController.swift */; };
 		26533E682545BC8300EE7B1E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26533E672545BC8300EE7B1E /* Profile.storyboard */; };
 		26533E6D2545CFE600EE7B1E /* MainProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26533E6B2545CFE600EE7B1E /* MainProfileTableViewCell.swift */; };
@@ -30,10 +33,19 @@
 		26B4A096257D01950009A5DC /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4A095257D01950009A5DC /* Protocol.swift */; };
 		26B4A098257F9EF10009A5DC /* NewPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26B4A097257F9EF10009A5DC /* NewPost.storyboard */; };
 		26B4A09A257FB4150009A5DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26B4A099257FB4150009A5DC /* GoogleService-Info.plist */; };
+		26B4A09D258099060009A5DC /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4A09B258099060009A5DC /* AnswerTableViewCell.swift */; };
+		26B4A09E258099060009A5DC /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B4A09C258099060009A5DC /* AnswerTableViewCell.xib */; };
 		26C1EDE02549B83A00D51AA0 /* QuestionAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C1EDDF2549B83A00D51AA0 /* QuestionAnswerViewController.swift */; };
+		26EBD2CB2582B00500972E25 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBD2CA2582B00500972E25 /* Helper.swift */; };
+		26EBD2CD2582B19700972E25 /* userDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBD2CC2582B19700972E25 /* userDatabase.swift */; };
+		26EBD2CF2582B41A00972E25 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBD2CE2582B41A00972E25 /* extension.swift */; };
+		26EBD2D12582BADE00972E25 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBD2D02582BADE00972E25 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		260290742580A00100D279F4 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		260290762580A3A500D279F4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		260290782580F30700D279F4 /* FirestoreReferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreReferenceManager.swift; sourceTree = "<group>"; };
 		26533E642545BB1E00EE7B1E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		26533E672545BC8300EE7B1E /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		26533E6B2545CFE600EE7B1E /* MainProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -58,7 +70,13 @@
 		26B4A095257D01950009A5DC /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		26B4A097257F9EF10009A5DC /* NewPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPost.storyboard; sourceTree = "<group>"; };
 		26B4A099257FB4150009A5DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		26B4A09B258099060009A5DC /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
+		26B4A09C258099060009A5DC /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
 		26C1EDDF2549B83A00D51AA0 /* QuestionAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerViewController.swift; sourceTree = "<group>"; };
+		26EBD2CA2582B00500972E25 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		26EBD2CC2582B19700972E25 /* userDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDatabase.swift; sourceTree = "<group>"; };
+		26EBD2CE2582B41A00972E25 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		26EBD2D02582BADE00972E25 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		33E581577DEB842C97DD8656 /* Pods-Community Discussion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Community Discussion.release.xcconfig"; path = "Target Support Files/Pods-Community Discussion/Pods-Community Discussion.release.xcconfig"; sourceTree = "<group>"; };
 		92213F4B3FC5AFDB347C871F /* Pods_Community_Discussion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Community_Discussion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD0DD9565EF2570F3AA6761 /* Pods-Community Discussion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Community Discussion.debug.xcconfig"; path = "Target Support Files/Pods-Community Discussion/Pods-Community Discussion.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2602907125809F9E00D279F4 /* Question&Answer */ = {
+			isa = PBXGroup;
+			children = (
+				26C1EDDF2549B83A00D51AA0 /* QuestionAnswerViewController.swift */,
+				260290742580A00100D279F4 /* AnswerViewController.swift */,
+			);
+			path = "Question&Answer";
+			sourceTree = "<group>";
+		};
 		26533E662545BBE200EE7B1E /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,12 +147,11 @@
 		26AA13D92544C76F00BF4F8F /* Community Discussion */ = {
 			isa = PBXGroup;
 			children = (
-				26C1EDDE2549B7AD00D51AA0 /* Data */,
+				26C1EDDE2549B7AD00D51AA0 /* Database */,
 				26AA13F02544C79300BF4F8F /* Resources */,
 				26AA13EF2544C78600BF4F8F /* View&Model */,
 				26AA13EE2544C77F00BF4F8F /* Controllers */,
 				26AA13E82544C77500BF4F8F /* Info.plist */,
-				26B4A095257D01950009A5DC /* Protocol.swift */,
 				26B4A099257FB4150009A5DC /* GoogleService-Info.plist */,
 			);
 			path = "Community Discussion";
@@ -134,6 +160,7 @@
 		26AA13EE2544C77F00BF4F8F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2602907125809F9E00D279F4 /* Question&Answer */,
 				26AA13F82544C85B00BF4F8F /* New Post */,
 				26AA13F72544C85200BF4F8F /* Activity */,
 				26AA13F62544C84900BF4F8F /* Serach */,
@@ -141,7 +168,6 @@
 				26AA13F22544C82400BF4F8F /* Profile */,
 				26AA13DE2544C76F00BF4F8F /* ViewController.swift */,
 				26533E642545BB1E00EE7B1E /* RegisterViewController.swift */,
-				26C1EDDF2549B83A00D51AA0 /* QuestionAnswerViewController.swift */,
 				26533E662545BBE200EE7B1E /* StoryBoards */,
 			);
 			path = Controllers;
@@ -153,6 +179,8 @@
 				26533E6B2545CFE600EE7B1E /* MainProfileTableViewCell.swift */,
 				26533E742545F6BB00EE7B1E /* FeedTableViewCell.swift */,
 				26533E752545F6BB00EE7B1E /* FeedTableViewCell.xib */,
+				26B4A09B258099060009A5DC /* AnswerTableViewCell.swift */,
+				26B4A09C258099060009A5DC /* AnswerTableViewCell.xib */,
 			);
 			path = "View&Model";
 			sourceTree = "<group>";
@@ -161,7 +189,11 @@
 			isa = PBXGroup;
 			children = (
 				26AA13DA2544C76F00BF4F8F /* AppDelegate.swift */,
+				26EBD2CA2582B00500972E25 /* Helper.swift */,
 				26AA13DC2544C76F00BF4F8F /* SceneDelegate.swift */,
+				26B4A095257D01950009A5DC /* Protocol.swift */,
+				26EBD2CE2582B41A00972E25 /* extension.swift */,
+				26EBD2D02582BADE00972E25 /* Constant.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -178,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				26AA13F92544C87100BF4F8F /* HomeViewController.swift */,
+				260290762580A3A500D279F4 /* MenuViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -206,11 +239,13 @@
 			path = "New Post";
 			sourceTree = "<group>";
 		};
-		26C1EDDE2549B7AD00D51AA0 /* Data */ = {
+		26C1EDDE2549B7AD00D51AA0 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				260290782580F30700D279F4 /* FirestoreReferenceManager.swift */,
+				26EBD2CC2582B19700972E25 /* userDatabase.swift */,
 			);
-			path = Data;
+			path = Database;
 			sourceTree = "<group>";
 		};
 		30ED792E403A98B3B8CEE67C /* Pods */ = {
@@ -219,7 +254,6 @@
 				EAD0DD9565EF2570F3AA6761 /* Pods-Community Discussion.debug.xcconfig */,
 				33E581577DEB842C97DD8656 /* Pods-Community Discussion.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -300,6 +334,7 @@
 				26B4A092257CD28C0009A5DC /* QuestionPage.storyboard in Resources */,
 				26B4A09A257FB4150009A5DC /* GoogleService-Info.plist in Resources */,
 				26B4A094257CEC5F0009A5DC /* Search.storyboard in Resources */,
+				26B4A09E258099060009A5DC /* AnswerTableViewCell.xib in Resources */,
 				26AA13E22544C76F00BF4F8F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,17 +388,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				260290792580F30700D279F4 /* FirestoreReferenceManager.swift in Sources */,
 				26AA13FC2544C87D00BF4F8F /* SearchViewController.swift in Sources */,
 				26B4A096257D01950009A5DC /* Protocol.swift in Sources */,
+				26EBD2CF2582B41A00972E25 /* extension.swift in Sources */,
 				26533E762545F6BB00EE7B1E /* FeedTableViewCell.swift in Sources */,
 				26533E652545BB1E00EE7B1E /* RegisterViewController.swift in Sources */,
+				26EBD2CB2582B00500972E25 /* Helper.swift in Sources */,
 				26AA13FA2544C87100BF4F8F /* HomeViewController.swift in Sources */,
+				26EBD2CD2582B19700972E25 /* userDatabase.swift in Sources */,
 				26AA13DF2544C76F00BF4F8F /* ViewController.swift in Sources */,
 				26AA13DB2544C76F00BF4F8F /* AppDelegate.swift in Sources */,
+				260290772580A3A500D279F4 /* MenuViewController.swift in Sources */,
 				26AA13FE2544C88900BF4F8F /* ActivityViewController.swift in Sources */,
 				26AA14012544C89E00BF4F8F /* NewPostViewController.swift in Sources */,
+				26EBD2D12582BADE00972E25 /* Constant.swift in Sources */,
+				26B4A09D258099060009A5DC /* AnswerTableViewCell.swift in Sources */,
 				26C1EDE02549B83A00D51AA0 /* QuestionAnswerViewController.swift in Sources */,
 				26AA13F42544C83B00BF4F8F /* ProfileViewController.swift in Sources */,
+				260290752580A00100D279F4 /* AnswerViewController.swift in Sources */,
 				26533E6D2545CFE600EE7B1E /* MainProfileTableViewCell.swift in Sources */,
 				26AA13DD2544C76F00BF4F8F /* SceneDelegate.swift in Sources */,
 			);

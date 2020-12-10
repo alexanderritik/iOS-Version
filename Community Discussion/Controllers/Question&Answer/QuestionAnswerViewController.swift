@@ -33,6 +33,13 @@ class QuestionAnswerViewController: UIViewController {
     }
 
     @IBAction func readAnswer(_ sender: Any) {
+        print("You want to read the answer")
+        
+        let vcStoryboard = UIStoryboard(name: "QuestionPage", bundle: nil)
+        let vc = vcStoryboard.instantiateViewController(identifier: "AnswerPage") as! AnswerViewController
+        let nav = UINavigationController(rootViewController: vc)
+//        nav.modalPresentationStyle = .fullScreen
+        present(nav , animated: true)
     }
     
     @IBAction func submitAnswer(_ sender: Any) {

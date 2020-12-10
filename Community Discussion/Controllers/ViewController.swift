@@ -7,17 +7,77 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
+    @IBOutlet var userPassword: UITextField!
+    @IBOutlet var userEmail: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loginCheck()
+    }
+
+    func loginCheck(){
+        if Auth.auth().currentUser != nil {
+            createTabBar()
+        }
+    }
    
     @IBAction func LoginSucessful(_ sender: Any) {
+        
+        guard  let email = userEmail.text  , let password = userPassword.text , !email.isEmpty ,!password.isEmpty else {
+            let error = Helper.error(title: "Details are Invalid", message: "Please retry to fill!")
+            present(error, animated:  true)
+            return
+        }
+        
+        
+        //firebase login
+        let spinner = UIViewController.displayLoading(withView: self.view)
+        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
+            guard let strongSelf = self else { return }
+            
+            if error == nil {
+                DispatchQueue.main.async {
+                    //remove spinner
+                    UIViewController.removingLoading(spinner: spinner)
+                }
+                print("enter to database")
+                
+                // it is used to chache the email locally with this key
+                UserDefaults.standard.set(email, forKey: "email")
+                
+                // creating tab bar
+                strongSelf.createTabBar()
+            }
+                
+            else if let error = error {
+                DispatchQueue.main.async {
+                    UIViewController.removingLoading(spinner: spinner)
+                }
+                let alertError = Helper.loginSignError(error: error , title: "Email or password is invalid")
+                DispatchQueue.main.async {
+                    strongSelf.present(alertError , animated: true)
+                }
+            }
+        }
+        
+    }
+    
+    
+    @IBAction func siginNewUser(_ sender: Any) {
+        performSegue(withIdentifier: "SignupSegue", sender: nil)
+    }
+ 
+    func createTabBar(){
         let tabBarVc = UITabBarController()
         
         let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
@@ -26,13 +86,15 @@ class ViewController: UIViewController {
         
         let searchStoryboard = UIStoryboard(name: "Search", bundle: nil)
         
+        let newPostStoryboard = UIStoryboard(name: "NewPost", bundle: nil)
+        
         let homeVC = homeStoryboard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
         
         let profileVC = profileStoryboard.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
         
         let searchVC = searchStoryboard.instantiateViewController(withIdentifier: "Search") as! SearchViewController
         
-        let newPostVC =  NewPostViewController()
+        let newPostVC = newPostStoryboard.instantiateViewController(withIdentifier: "NewPost") as!  NewPostViewController
         
         let activityVC = ActivityViewController()
         
@@ -78,13 +140,7 @@ class ViewController: UIViewController {
         }
         
         UINavigationBar.appearance().backgroundColor = UIColor.white
-    
         present(tabBarVc , animated: true)
-    }
-    
-    
-    @IBAction func siginNewUser(_ sender: Any) {
-        performSegue(withIdentifier: "SignupSegue", sender: nil)
     }
     
 }

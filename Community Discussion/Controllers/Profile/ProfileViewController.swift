@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
@@ -86,6 +87,22 @@ extension ProfileViewController :  UITableViewDataSource, UITableViewDelegate {
         }
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+         tableView.deselectRow(at: indexPath, animated: true)
+        
+        // opening the full questions
+        openFullQuery()
+    }
+    
+    func openFullQuery(){
+        let vcStoryboard = UIStoryboard(name: "QuestionPage", bundle: nil)
+        let vc = vcStoryboard.instantiateViewController(identifier: "QuestionPage") as! QuestionAnswerViewController
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav , animated: true)
+       }
 }
 
 extension ProfileViewController : ProfileSettingDelegate {
@@ -96,7 +113,7 @@ extension ProfileViewController : ProfileSettingDelegate {
             
         let logout = UIAlertAction(title: "Logout", style: .default) {[weak self] _ in
             guard let strongSelf = self else { return }
-//            strongSelf.doYouReallyWantToExist()
+            strongSelf.doYouReallyWantToExist()
         }
         
         let setting = UIAlertAction(title: "Setting", style: .default) { _ in
@@ -109,6 +126,36 @@ extension ProfileViewController : ProfileSettingDelegate {
         alert.addAction(setting)
         alert.addAction(cancel)
         present(alert,animated: true)
+    }
+    
+    func doYouReallyWantToExist(){
+        let alert = UIAlertController(title: "Logout", message: "Really want to logout?", preferredStyle: .alert)
+        
+        let yes = UIAlertAction(title: "Yes", style: .default) { [weak self]  _ in
+            
+            guard let strongSelf = self else { return }
+            do {
+                //logout from firebase
+                
+                try Auth.auth().signOut()
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainVC = mainStoryboard.instantiateViewController(withIdentifier: "Main") as! ViewController
+                mainVC.modalPresentationStyle = .fullScreen
+                strongSelf.present(mainVC, animated : true)
+                
+            }catch{
+                print("Failed to logout")
+            }
+        }
+        
+        let no = UIAlertAction(title: "No", style: .cancel) { [weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(yes)
+        alert.addAction(no)
+        self.present(alert , animated:  true)
     }
     
 }

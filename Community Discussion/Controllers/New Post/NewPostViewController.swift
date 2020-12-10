@@ -12,7 +12,8 @@ class NewPostViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationItem.title = "Query"
         // Do any additional setup after loading the view.
     }
     
