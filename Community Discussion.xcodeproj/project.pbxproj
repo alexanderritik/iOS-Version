@@ -98,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				26C1EDDF2549B83A00D51AA0 /* QuestionAnswerViewController.swift */,
+				26AA13F82544C85B00BF4F8F /* New Post */,
 				260290742580A00100D279F4 /* AnswerViewController.swift */,
 			);
 			path = "Question&Answer";
@@ -147,8 +148,8 @@
 		26AA13D92544C76F00BF4F8F /* Community Discussion */ = {
 			isa = PBXGroup;
 			children = (
-				26C1EDDE2549B7AD00D51AA0 /* Database */,
 				26AA13F02544C79300BF4F8F /* Resources */,
+				26C1EDDE2549B7AD00D51AA0 /* Database */,
 				26AA13EF2544C78600BF4F8F /* View&Model */,
 				26AA13EE2544C77F00BF4F8F /* Controllers */,
 				26AA13E82544C77500BF4F8F /* Info.plist */,
@@ -161,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				2602907125809F9E00D279F4 /* Question&Answer */,
-				26AA13F82544C85B00BF4F8F /* New Post */,
 				26AA13F72544C85200BF4F8F /* Activity */,
 				26AA13F62544C84900BF4F8F /* Serach */,
 				26AA13F52544C84000BF4F8F /* Home */,

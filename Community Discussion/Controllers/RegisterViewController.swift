@@ -67,7 +67,6 @@ extension RegisterViewController {
         
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
             guard let strongSelf = self else { return }
-
             if error == nil {
                 
                 //to remove the spinner at design time
@@ -81,17 +80,29 @@ extension RegisterViewController {
                 UserDefaults.standard.set(email, forKey: "email")
                 
                 print("welcome to database")
-    
-                if let uid = userDatabase.currentUserUid {
+                
+                if let uid = Auth.auth().currentUser?.uid {
                     
                     strongSelf.db.collection(K.FUser.users).document(uid).setData([
                         K.FUser.name : username,
                         K.FUser.email : email,
-                        K.FUser.dob : "Not Provided",
-                        K.FUser.phone : "Not Provided",
+                        K.FUser.dob : "_",
+                        K.FUser.phone : "_",
                         K.FUser.query_asked : 0,
                         K.FUser.total_likes : 0,
-                        K.FUser.total_views : 0
+                        K.FUser.total_views : 0,
+                        K.FUser.profileimg : "_",
+                        K.FUser.about : [
+                            K.FAbout.achievements : "_",
+                            K.FAbout.contribution : 0,
+                            K.FAbout.tags : [" " , " "],
+                            K.FAbout.projects : [" ", " "],
+                            K.FAbout.profileLinks : [
+                                K.FProfileLinks.codechef : "_",
+                                K.FProfileLinks.codeforces : "_",
+                                K.FProfileLinks.github : "_"
+                            ]
+                        ]
                     ]) { error in
                         if error != nil {
                             print(" There was issue with the database ")

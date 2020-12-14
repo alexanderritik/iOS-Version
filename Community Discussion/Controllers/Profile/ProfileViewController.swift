@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController {
            
         navigationItem.title = "Profile"
         setupTableView()
+        
+        fetchUser()
     }
     
 
@@ -62,6 +64,14 @@ extension ProfileViewController :  UITableViewDataSource, UITableViewDelegate {
             let profileHeaderTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ProfileHeaderTableViewCell") as! MainProfileTableViewCell
 
             profileHeaderTableViewCell.settingDelegate = self
+            userDatabase.shared.getUserDetail {(result) in
+                switch result {
+                case.success(let user):
+                    profileHeaderTableViewCell.fillDetail(user: user)
+                case .failure(let error):
+                    print("unable to downlaod chats \(error)")
+                }
+            }
 
             return profileHeaderTableViewCell
         }
@@ -69,7 +79,7 @@ extension ProfileViewController :  UITableViewDataSource, UITableViewDelegate {
         else if indexPath.section == 1 {
             
             let profileViewStyleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ProfileViewStyleTableViewCell")!
-
+            
             return profileViewStyleTableViewCell
         }
             
@@ -148,14 +158,20 @@ extension ProfileViewController : ProfileSettingDelegate {
             }
         }
         
-        let no = UIAlertAction(title: "No", style: .cancel) { [weak self] _ in
-            guard let strongSelf = self else { return }
-            strongSelf.dismiss(animated: true, completion: nil)
-        }
+        let no = UIAlertAction(title: "No", style: .cancel)
         
         alert.addAction(yes)
         alert.addAction(no)
         self.present(alert , animated:  true)
     }
     
+}
+
+
+//MARK: We make database file connections here
+extension ProfileViewController {
+    
+    
+    func fetchUser(){
+    }
 }

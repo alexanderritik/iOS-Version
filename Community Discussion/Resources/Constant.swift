@@ -19,10 +19,24 @@ struct K {
         static let phone = "phone"
         static let profileimg = "profileimg"
         static let query_asked = "query_asked"
-        static let total_likes = "total_likes"
+        static let total_answer = "total_answer"
         static let total_views = "total_views"
         static let about = "about"
         static let questions = "questions"
+    }
+    
+    struct FAbout {
+        static let achievements = "achievements"
+        static let contribution = "contribution"
+        static let profileLinks = "profileLinks"
+        static let tags = "tags"
+        static let projects = "projects"
+    }
+    
+    struct FProfileLinks {
+        static let codechef = "codechef"
+        static let codeforces = "codeforces"
+        static let github = "github"
     }
     
 }

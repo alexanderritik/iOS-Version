@@ -37,4 +37,14 @@ class MainProfileTableViewCell: UITableViewCell {
         print("did touch setting")
         settingDelegate?.profileSettingDidTouch()
     }
+    
+    
+    func fillDetail(user : User)
+    {
+        username.text = user.name
+        userEmail.text = user.email
+        questionCount.text = String(user.query_asked)
+        answerCount.text = String(user.total_likes)
+        viewsCount.text = String(user.total_views)
+    }
 }

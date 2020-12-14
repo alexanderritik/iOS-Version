@@ -7,13 +7,3 @@
 //
 
 import Foundation
-import FirebaseDatabase
-
-final class DatabaseManager {
-    
-    //creating a shared delegate
-    static let shared = DatabaseManager()
-    
-    private let database = Database.database().reference()
-    
-}
