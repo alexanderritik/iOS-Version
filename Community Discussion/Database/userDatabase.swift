@@ -52,7 +52,7 @@ public enum DatabaseErrors : Error {
 
 extension userDatabase {
 
-    //get profile id
+    //MARK: get profile id user detail
     public func getUserDetail(completion : @escaping (Result<User, Error>)->Void){
     
         

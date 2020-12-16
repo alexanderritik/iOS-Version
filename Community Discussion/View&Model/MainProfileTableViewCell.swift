@@ -44,7 +44,7 @@ class MainProfileTableViewCell: UITableViewCell {
         username.text = user.name
         userEmail.text = user.email
         questionCount.text = String(user.query_asked)
-        answerCount.text = String(user.total_likes)
+        answerCount.text = String(user.total_answer)
         viewsCount.text = String(user.total_views)
     }
 }

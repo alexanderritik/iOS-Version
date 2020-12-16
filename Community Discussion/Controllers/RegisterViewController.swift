@@ -89,7 +89,7 @@ extension RegisterViewController {
                         K.FUser.dob : "_",
                         K.FUser.phone : "_",
                         K.FUser.query_asked : 0,
-                        K.FUser.total_likes : 0,
+                        K.FUser.total_answer : 0,
                         K.FUser.total_views : 0,
                         K.FUser.profileimg : "_",
                         K.FUser.about : [

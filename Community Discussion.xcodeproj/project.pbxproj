@@ -17,6 +17,10 @@
 		26533E712545DD4400EE7B1E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26533E702545DD4400EE7B1E /* Home.storyboard */; };
 		26533E762545F6BB00EE7B1E /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26533E742545F6BB00EE7B1E /* FeedTableViewCell.swift */; };
 		26533E772545F6BB00EE7B1E /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26533E752545F6BB00EE7B1E /* FeedTableViewCell.xib */; };
+		2692DA19258A95200025D13E /* questionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2692DA18258A95200025D13E /* questionDatabase.swift */; };
+		2692DA1B258A9EF40025D13E /* postDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2692DA1A258A9EF40025D13E /* postDatabase.swift */; };
+		2692DA1D258A9F0A0025D13E /* searchDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2692DA1C258A9F0A0025D13E /* searchDatabase.swift */; };
+		2692DA1F258A9F9A0025D13E /* answerDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2692DA1E258A9F9A0025D13E /* answerDatabase.swift */; };
 		26AA13DB2544C76F00BF4F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA13DA2544C76F00BF4F8F /* AppDelegate.swift */; };
 		26AA13DD2544C76F00BF4F8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA13DC2544C76F00BF4F8F /* SceneDelegate.swift */; };
 		26AA13DF2544C76F00BF4F8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA13DE2544C76F00BF4F8F /* ViewController.swift */; };
@@ -52,6 +56,10 @@
 		26533E702545DD4400EE7B1E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		26533E742545F6BB00EE7B1E /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		26533E752545F6BB00EE7B1E /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
+		2692DA18258A95200025D13E /* questionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionDatabase.swift; sourceTree = "<group>"; };
+		2692DA1A258A9EF40025D13E /* postDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDatabase.swift; sourceTree = "<group>"; };
+		2692DA1C258A9F0A0025D13E /* searchDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchDatabase.swift; sourceTree = "<group>"; };
+		2692DA1E258A9F9A0025D13E /* answerDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerDatabase.swift; sourceTree = "<group>"; };
 		26AA13D72544C76F00BF4F8F /* Community Discussion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Community Discussion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AA13DA2544C76F00BF4F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26AA13DC2544C76F00BF4F8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,8 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				26AA13DA2544C76F00BF4F8F /* AppDelegate.swift */,
-				26EBD2CA2582B00500972E25 /* Helper.swift */,
 				26AA13DC2544C76F00BF4F8F /* SceneDelegate.swift */,
+				26EBD2CA2582B00500972E25 /* Helper.swift */,
 				26B4A095257D01950009A5DC /* Protocol.swift */,
 				26EBD2CE2582B41A00972E25 /* extension.swift */,
 				26EBD2D02582BADE00972E25 /* Constant.swift */,
@@ -244,6 +252,10 @@
 			children = (
 				260290782580F30700D279F4 /* FirestoreReferenceManager.swift */,
 				26EBD2CC2582B19700972E25 /* userDatabase.swift */,
+				2692DA18258A95200025D13E /* questionDatabase.swift */,
+				2692DA1A258A9EF40025D13E /* postDatabase.swift */,
+				2692DA1C258A9F0A0025D13E /* searchDatabase.swift */,
+				2692DA1E258A9F9A0025D13E /* answerDatabase.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -389,7 +401,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				260290792580F30700D279F4 /* FirestoreReferenceManager.swift in Sources */,
+				2692DA1B258A9EF40025D13E /* postDatabase.swift in Sources */,
 				26AA13FC2544C87D00BF4F8F /* SearchViewController.swift in Sources */,
+				2692DA19258A95200025D13E /* questionDatabase.swift in Sources */,
 				26B4A096257D01950009A5DC /* Protocol.swift in Sources */,
 				26EBD2CF2582B41A00972E25 /* extension.swift in Sources */,
 				26533E762545F6BB00EE7B1E /* FeedTableViewCell.swift in Sources */,
@@ -402,8 +416,10 @@
 				260290772580A3A500D279F4 /* MenuViewController.swift in Sources */,
 				26AA13FE2544C88900BF4F8F /* ActivityViewController.swift in Sources */,
 				26AA14012544C89E00BF4F8F /* NewPostViewController.swift in Sources */,
+				2692DA1F258A9F9A0025D13E /* answerDatabase.swift in Sources */,
 				26EBD2D12582BADE00972E25 /* Constant.swift in Sources */,
 				26B4A09D258099060009A5DC /* AnswerTableViewCell.swift in Sources */,
+				2692DA1D258A9F0A0025D13E /* searchDatabase.swift in Sources */,
 				26C1EDE02549B83A00D51AA0 /* QuestionAnswerViewController.swift in Sources */,
 				26AA13F42544C83B00BF4F8F /* ProfileViewController.swift in Sources */,
 				260290752580A00100D279F4 /* AnswerViewController.swift in Sources */,
