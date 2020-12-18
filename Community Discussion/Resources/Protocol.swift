@@ -12,3 +12,9 @@ protocol ProfileSettingDelegate: class {
 //    func profileImageDidTouch()
     func profileSettingDidTouch()
 }
+
+
+protocol MenuControllerDelegate: class {
+
+    func didSelectMenuItem(named: String)
+}

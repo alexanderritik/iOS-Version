@@ -8,23 +8,42 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class MenuViewController : UITableViewController {
+    
+    private let menuItems : [String]
+    public var delegate : MenuControllerDelegate?
+    
+    init(with menuItems : [String]) {
+        self.menuItems = menuItems
+        super.init(nibName:nil , bundle: nil)
+        tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        tableView.backgroundColor = UIColor.gray
+        tableView.separatorColor = UIColor.clear
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menuItems.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell" , for : indexPath) as! SideMenuTableViewCell
+        cell.cellName?.text = menuItems[indexPath.row]
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let selectedItem = menuItems[indexPath.row]
+        delegate?.didSelectMenuItem(named: selectedItem)
+    }
+    
 }

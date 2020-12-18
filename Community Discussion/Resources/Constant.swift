@@ -39,5 +39,18 @@ struct K {
         static let github = "github"
     }
     
+    struct FQuestions {
+        static let question = "question"
+        static let answercount = "answercount"
+        static let  likes = "likes"
+        static let  mainQuestion = "mainQuestion"
+        static let  name = "name"
+        static let  profileimg = "profileimg"
+        static let  timestamp = "timestamp"
+        static let  tags = "tags"
+        static let  title = "title"
+        static let  userId = "userId"
+        static let  views = "views"
+    }
     
 }

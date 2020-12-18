@@ -21,6 +21,8 @@
 		2692DA1B258A9EF40025D13E /* postDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2692DA1A258A9EF40025D13E /* postDatabase.swift */; };
 		2692DA1D258A9F0A0025D13E /* searchDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2692DA1C258A9F0A0025D13E /* searchDatabase.swift */; };
 		2692DA1F258A9F9A0025D13E /* answerDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2692DA1E258A9F9A0025D13E /* answerDatabase.swift */; };
+		2692DA22258AA48F0025D13E /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2692DA20258AA48F0025D13E /* SideMenuTableViewCell.swift */; };
+		2692DA23258AA48F0025D13E /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2692DA21258AA48F0025D13E /* SideMenuTableViewCell.xib */; };
 		26AA13DB2544C76F00BF4F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA13DA2544C76F00BF4F8F /* AppDelegate.swift */; };
 		26AA13DD2544C76F00BF4F8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA13DC2544C76F00BF4F8F /* SceneDelegate.swift */; };
 		26AA13DF2544C76F00BF4F8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA13DE2544C76F00BF4F8F /* ViewController.swift */; };
@@ -60,6 +62,8 @@
 		2692DA1A258A9EF40025D13E /* postDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDatabase.swift; sourceTree = "<group>"; };
 		2692DA1C258A9F0A0025D13E /* searchDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchDatabase.swift; sourceTree = "<group>"; };
 		2692DA1E258A9F9A0025D13E /* answerDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerDatabase.swift; sourceTree = "<group>"; };
+		2692DA20258AA48F0025D13E /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		2692DA21258AA48F0025D13E /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		26AA13D72544C76F00BF4F8F /* Community Discussion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Community Discussion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AA13DA2544C76F00BF4F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26AA13DC2544C76F00BF4F8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,8 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				26C1EDDF2549B83A00D51AA0 /* QuestionAnswerViewController.swift */,
-				26AA13F82544C85B00BF4F8F /* New Post */,
 				260290742580A00100D279F4 /* AnswerViewController.swift */,
+				26AA13F82544C85B00BF4F8F /* New Post */,
 			);
 			path = "Question&Answer";
 			sourceTree = "<group>";
@@ -189,6 +193,8 @@
 				26533E752545F6BB00EE7B1E /* FeedTableViewCell.xib */,
 				26B4A09B258099060009A5DC /* AnswerTableViewCell.swift */,
 				26B4A09C258099060009A5DC /* AnswerTableViewCell.xib */,
+				2692DA20258AA48F0025D13E /* SideMenuTableViewCell.swift */,
+				2692DA21258AA48F0025D13E /* SideMenuTableViewCell.xib */,
 			);
 			path = "View&Model";
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 				26AA13E72544C77500BF4F8F /* LaunchScreen.storyboard in Resources */,
 				26533E712545DD4400EE7B1E /* Home.storyboard in Resources */,
 				26AA13E42544C77500BF4F8F /* Assets.xcassets in Resources */,
+				2692DA23258AA48F0025D13E /* SideMenuTableViewCell.xib in Resources */,
 				26533E772545F6BB00EE7B1E /* FeedTableViewCell.xib in Resources */,
 				26B4A098257F9EF10009A5DC /* NewPost.storyboard in Resources */,
 				26533E682545BC8300EE7B1E /* Profile.storyboard in Resources */,
@@ -411,6 +418,7 @@
 				26EBD2CB2582B00500972E25 /* Helper.swift in Sources */,
 				26AA13FA2544C87100BF4F8F /* HomeViewController.swift in Sources */,
 				26EBD2CD2582B19700972E25 /* userDatabase.swift in Sources */,
+				2692DA22258AA48F0025D13E /* SideMenuTableViewCell.swift in Sources */,
 				26AA13DF2544C76F00BF4F8F /* ViewController.swift in Sources */,
 				26AA13DB2544C76F00BF4F8F /* AppDelegate.swift in Sources */,
 				260290772580A3A500D279F4 /* MenuViewController.swift in Sources */,

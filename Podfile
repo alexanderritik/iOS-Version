@@ -14,5 +14,6 @@ target 'Community Discussion' do
 	pod 'FirebaseFirestoreSwift'
 	pod 'Firebase/Storage'
 	pod 'Firebase/Database'
+	pod 'SideMenu'
 
 end

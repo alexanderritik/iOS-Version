@@ -40,7 +40,12 @@
                         <viewLayoutGuide key="safeArea" id="ieV-eb-MDd"/>
                     </view>
                     <navigationItem key="navigationItem" id="yR9-eO-6Wq">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="FQd-hG-q1F"/>
+                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="FQd-hG-q1F">
+                            <color key="tintColor" red="0.12549019610000001" green="0.1450980392" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="sideMenuDidTouch:" destination="1sl-0K-qHR" id="VwU-4j-Rac"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Mgg-bj-KEy" id="N7L-F3-7z4"/>
@@ -84,4 +89,7 @@
             <point key="canvasLocation" x="1788" y="80"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+    </resources>
 </document>

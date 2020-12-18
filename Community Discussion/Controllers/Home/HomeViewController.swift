@@ -7,19 +7,66 @@
 //
 
 import UIKit
+import SideMenu
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController ,MenuControllerDelegate {
 
     @IBOutlet var tableView: UITableView!
+    
+    private var sideMenu: SideMenuNavigationController?
     
     var posts : [[String]] = [["Ritik"],["Ritik"],["Ritik"],["Ritik"],["Ritik"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        let menu = MenuViewController(with: ["PROFILE" ,"FRIENDS" ,"EVENTS" , "TICKETS" ,"REDEEM" ,"FEATURED" ,"ABOUT"])
+               
+        menu.delegate = self
+               
+        sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
+       
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+               
+        
         navigationItem.title = "Community Discussion"
         
         setupTableView()
+    }
+    
+    @IBAction func sideMenuDidTouch(_ sender: Any) {
+        present(sideMenu! ,animated: true)
+    }
+    
+    
+    func didSelectMenuItem(named: String) {
+        sideMenu?.dismiss(animated: true) {
+            
+            if named == "PROFILE"{
+                
+            }
+            else if named == "FRIENDS"{
+                
+            }
+            else if named == "EVENTS"{
+                
+            }
+            else if named == "TICKETS"{
+                
+            }
+            else if named == "REDEEM"{
+                
+            }
+            else if named == "FEATURED"{
+                
+            }
+            else if named == "ABOUT"{
+                
+            }
+        }
     }
     
     
