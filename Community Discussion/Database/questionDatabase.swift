@@ -93,7 +93,39 @@ extension questionDatabase {
     //MARK: fetch question of particular user all questions
     public func getAllQuestionOfUser(id: String){
         
+        db.collection(K.FUser.users).document(id).collection("questions").getDocuments(
+            ) { (snapshot, error) in
+                
+                if error == nil {
+                    
+                    guard let snap = snapshot else { return }
+                    
+                    for document in snap.documents {
+                        print(document.data())
+                        if let sol = document.data() as? [String:Any] , document.exists{
+                            self.getQuestionFromId(id: sol["questionID"] as! String)
+                        }
+                    }
+                    
+                }
+                
+        }
+
+    }
+    
+    
+    //MARK: Get question from question id
+    public func getQuestionFromId(id: String) {
         
+        db.collection(K.FQuestions.question).document(id).getDocument { (document, error) in
+            
+            if let document = document, document.exists {
+                if let data = document.data(){
+                        print(data)
+                }
+            }
+            
+        }
         
     }
     

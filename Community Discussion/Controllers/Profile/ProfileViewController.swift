@@ -18,6 +18,10 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
            
+        print("call get all ques")
+        let uid = Auth.auth().currentUser?.uid
+        questionDatabase.shared.getAllQuestionOfUser(id: uid!)
+        
         navigationItem.title = "Profile"
         setupTableView()
         
