@@ -15,19 +15,38 @@ class ProfileViewController: UIViewController {
     
     var posts : [[String]] = [["Ritik"],["Ritik"],["Ritik"],["Ritik"],["Ritik"]]
     
+    var qArray = [Question]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-           
-        print("call get all ques")
-        let uid = Auth.auth().currentUser?.uid
-        questionDatabase.shared.getAllQuestionOfUser(id: uid!)
-        
+
         navigationItem.title = "Profile"
         setupTableView()
         
-        fetchUser()
+        qArray.removeAll()
+        
+        let uid = Auth.auth().currentUser?.uid
+        questionDatabase.shared.getAllQuestionOfUser(id: uid!) { [weak self] (result) in
+            guard let strongSelf = self else { return }
+            switch result {
+            
+            case .success(let data):
+                print("we are in profile ",data)
+                strongSelf.qArray.append(data)
+                DispatchQueue.main.async {
+                    strongSelf.tableView.reloadData()
+                }
+            case .failure(_):
+                print(" There is some thing wrong")
+            }
+        }
+        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+           
+    }
 
 }
 
@@ -56,7 +75,7 @@ extension ProfileViewController :  UITableViewDataSource, UITableViewDelegate {
             return 1
         }
         else {
-            return posts.count
+            return qArray.count
         }
         
     }
@@ -89,7 +108,9 @@ extension ProfileViewController :  UITableViewDataSource, UITableViewDelegate {
             
         else if indexPath.section == 2 {
             
-            let feedTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell")!
+            let feedTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell") as! FeedTableViewCell
+            
+            feedTableViewCell.fillDetail(question : qArray[indexPath.row])
             
             return feedTableViewCell
         }
@@ -106,15 +127,22 @@ extension ProfileViewController :  UITableViewDataSource, UITableViewDelegate {
         
          tableView.deselectRow(at: indexPath, animated: true)
         
-        // opening the full questions
-        openFullQuery()
+        if (indexPath.section == 2) {
+            // opening the full questions
+            print(indexPath.row)
+            openFullQuery(question: qArray[indexPath.row])
+        }
     }
     
-    func openFullQuery(){
+    func openFullQuery(question : Question){
         let vcStoryboard = UIStoryboard(name: "QuestionPage", bundle: nil)
         let vc = vcStoryboard.instantiateViewController(identifier: "QuestionPage") as! QuestionAnswerViewController
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
+        vc.loadViewIfNeeded()
+        vc.question = question
+        vc.fillData()
+        
         present(nav , animated: true)
        }
 }
@@ -172,10 +200,3 @@ extension ProfileViewController : ProfileSettingDelegate {
 }
 
 
-//MARK: We make database file connections here
-extension ProfileViewController {
-    
-    
-    func fetchUser(){
-    }
-}

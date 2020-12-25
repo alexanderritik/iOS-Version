@@ -1,55 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="272" id="KGk-i7-Jjw" customClass="AnswerTableViewCell" customModule="Community_Discussion" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="486" id="KGk-i7-Jjw" customClass="AnswerTableViewCell" customModule="Community_Discussion" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="486"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="486"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aXA-Hs-gXh">
-                        <rect key="frame" x="10" y="10" width="300" height="186"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aXA-Hs-gXh">
+                        <rect key="frame" x="10" y="10" width="300" height="400"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="400" id="kQW-OP-9DF"/>
+                        </constraints>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="89" translatesAutoresizingMaskIntoConstraints="NO" id="SE1-mw-qUY">
-                        <rect key="frame" x="36" y="211" width="248" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iX-CK-U86">
+                        <rect key="frame" x="10" y="412" width="41.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlu-po-ipB">
+                        <rect key="frame" x="262.5" y="412" width="41.5" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SE1-mw-qUY">
+                        <rect key="frame" x="26" y="432" width="268" height="33"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awk-nE-ATP">
-                                <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
-                                <state key="normal" title="Upvote"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLh-5E-Dph">
-                                <rect key="frame" x="168.5" y="0.0" width="79.5" height="30"/>
-                                <state key="normal" title="Downvote"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="RFI-Mh-ibz">
+                                <rect key="frame" x="0.0" y="0.0" width="126.5" height="33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gM7-rx-wp2">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awk-nE-ATP">
+                                        <rect key="frame" x="32" y="0.0" width="94.5" height="33"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="Upvote">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="RQt-4Q-9fT">
+                                <rect key="frame" x="141.5" y="0.0" width="126.5" height="33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxX-mi-e5I">
+                                        <rect key="frame" x="0.0" y="0.0" width="26" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLh-5E-Dph">
+                                        <rect key="frame" x="26" y="0.0" width="100.5" height="33"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Downvote">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="SE1-mw-qUY" secondAttribute="trailing" constant="20" id="0Z4-lv-H27"/>
-                    <constraint firstItem="SE1-mw-qUY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="7J9-j4-CrG"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="SE1-mw-qUY" secondAttribute="bottom" constant="20" id="Ilj-NA-IWf"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="SE1-mw-qUY" secondAttribute="bottom" constant="10" id="3Hb-I4-h7g"/>
+                    <constraint firstItem="SE1-mw-qUY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="3no-qg-fPX"/>
+                    <constraint firstItem="hlu-po-ipB" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="9QT-cb-mgE"/>
+                    <constraint firstItem="hlu-po-ipB" firstAttribute="top" secondItem="aXA-Hs-gXh" secondAttribute="bottom" constant="2" id="Fuw-YI-mbo"/>
+                    <constraint firstItem="6iX-CK-U86" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ir2-8Y-xEE"/>
                     <constraint firstAttribute="trailing" secondItem="aXA-Hs-gXh" secondAttribute="trailing" constant="10" id="XX4-2I-TH2"/>
-                    <constraint firstItem="SE1-mw-qUY" firstAttribute="top" secondItem="aXA-Hs-gXh" secondAttribute="bottom" constant="15" id="oCT-hS-41a"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="SE1-mw-qUY" secondAttribute="trailing" constant="10" id="cE5-cB-O3N"/>
+                    <constraint firstItem="SE1-mw-qUY" firstAttribute="top" secondItem="hlu-po-ipB" secondAttribute="bottom" constant="5" id="iSd-h4-LeM"/>
+                    <constraint firstItem="6iX-CK-U86" firstAttribute="top" secondItem="aXA-Hs-gXh" secondAttribute="bottom" constant="2" id="l9Y-19-bIG"/>
                     <constraint firstItem="aXA-Hs-gXh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="tVB-d0-tbF"/>
                     <constraint firstItem="aXA-Hs-gXh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="udo-xJ-hUq"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="137.68115942028987" y="196.875"/>
+            <connections>
+                <outlet property="content" destination="aXA-Hs-gXh" id="5Kp-eK-RAw"/>
+                <outlet property="date" destination="hlu-po-ipB" id="Abt-1C-tvv"/>
+                <outlet property="downvote" destination="PLh-5E-Dph" id="iG1-Yi-fZA"/>
+                <outlet property="downvoteCount" destination="TxX-mi-e5I" id="vnX-0V-DGa"/>
+                <outlet property="name" destination="6iX-CK-U86" id="YYV-Gr-qpd"/>
+                <outlet property="upvote" destination="awk-nE-ATP" id="PTd-EU-32x"/>
+                <outlet property="upvoteCount" destination="gM7-rx-wp2" id="8gn-ba-OMs"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="268.52678571428572"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

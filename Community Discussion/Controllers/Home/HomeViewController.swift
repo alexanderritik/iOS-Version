@@ -35,6 +35,7 @@ class HomeViewController: UIViewController ,MenuControllerDelegate {
         navigationItem.title = "Community Discussion"
         
         setupTableView()
+        
     }
     
     @IBAction func sideMenuDidTouch(_ sender: Any) {
@@ -114,5 +115,6 @@ extension HomeViewController :  UITableViewDataSource, UITableViewDelegate {
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         present(nav , animated: true)
-       }
+    }
+    
 }

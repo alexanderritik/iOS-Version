@@ -40,6 +40,7 @@ struct K {
     }
     
     struct FQuestions {
+        static let questionId = "questionId"
         static let question = "question"
         static let answercount = "answercount"
         static let  likes = "likes"
@@ -51,6 +52,17 @@ struct K {
         static let  title = "title"
         static let  userId = "userId"
         static let  views = "views"
+    }
+    
+    struct FAnswers {
+        static let answer = "answer"
+        static let content = "content"
+        static let  downvote = "downvote"
+        static let  upvote = "upvote"
+        static let  name = "name"
+        static let  userdId = "userId"
+        static let  timestamp = "timestamp"
+        static let questionId = "questionID"
     }
     
 }

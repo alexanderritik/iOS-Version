@@ -10,18 +10,21 @@ import UIKit
 
 class QuestionAnswerViewController: UIViewController {
 
-    @IBOutlet var queryAskedBy: UILabel!
-    @IBOutlet var dateAsked: UILabel!
-    @IBOutlet var userImage: UIImageView!
-    @IBOutlet var QuestionDetail: UITextView!
+    @IBOutlet var dateasked: UILabel!
+    @IBOutlet var username: UILabel!
+    @IBOutlet var mainQuestion: UITextView!
     
-    @IBOutlet var setting: UIButton!
+    var question : Question?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("IN question view controller")
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(moveBack))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "settingIcon"), style: .plain, target: self, action: nil)
+     
+        fillData()
+        
     }
     
     @objc func moveBack(){
@@ -33,25 +36,33 @@ class QuestionAnswerViewController: UIViewController {
     }
 
     @IBAction func readAnswer(_ sender: Any) {
-        print("You want to read the answer")
         
         let vcStoryboard = UIStoryboard(name: "QuestionPage", bundle: nil)
         let vc = vcStoryboard.instantiateViewController(identifier: "AnswerPage") as! AnswerViewController
         let nav = UINavigationController(rootViewController: vc)
 //        nav.modalPresentationStyle = .fullScreen
         present(nav , animated: true)
+        
     }
     
     @IBAction func submitAnswer(_ sender: Any) {
-    }
-    /*
-    // MARK: - Navigation
+        print("Error")
+        UserDefaults.standard.set(question?.id , forKey: K.FQuestions.questionId)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    func fillData(){
+        
+        guard let q = question else { return }
+        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        let dateString = formatter.string(from: q.timestamp)
+        
+        username.text = q.name
+        mainQuestion.text = q.mainQuestion
+        dateasked.text = dateString
+        
+    }
 
 }

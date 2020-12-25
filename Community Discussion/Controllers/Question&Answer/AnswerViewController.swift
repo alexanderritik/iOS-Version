@@ -8,23 +8,48 @@
 
 import UIKit
 
-class AnswerViewController: UIViewController {
+class AnswerViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource {
 
+    @IBOutlet var tableView: UITableView!
+    
+    var answerArray = [Answer]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "AnswerTableViewCell", bundle: nil), forCellReuseIdentifier: "AnswerTableViewCell")
         // Do any additional setup after loading the view.
+        
+        guard let questionId = UserDefaults.standard.string(forKey: K.FQuestions.questionId) else { return }
+            
+        answerDatabase.shared.getAllAnswer(questionId: questionId) {[weak self] (result) in
+            guard let strongSelf = self else{ return }
+            switch result {
+                case .success(let ans):
+                    print(ans)
+                    strongSelf.answerArray.append(ans)
+                    DispatchQueue.main.async {
+                        strongSelf.tableView.reloadData()
+                    }
+                case .failure(_):
+                    print("answer canot fethc")
+            }
+        }
+        
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return answerArray.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerTableViewCell") as! AnswerTableViewCell
+        cell.cellConfigure(answer: answerArray[indexPath.row])
+        return cell
+    }
 
+    
 }

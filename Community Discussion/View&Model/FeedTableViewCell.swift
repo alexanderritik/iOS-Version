@@ -26,6 +26,12 @@ class FeedTableViewCell: UITableViewCell {
     
     @IBOutlet var viewsCount: UILabel!
     
+    @IBOutlet var tag1: UILabel!
+    
+    @IBOutlet var tag2: UILabel!
+    
+    @IBOutlet var tag3: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -43,6 +49,22 @@ class FeedTableViewCell: UITableViewCell {
     @IBAction func likeButtonDidTouch(_ sender: Any) {
     }
     
-    
+    func fillDetail(question : Question)
+    {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        let dateString = formatter.string(from: question.timestamp)
+        
+        username.text = question.name
+        mainQuestion.text = question.title
+        datePosted.text = dateString
+        likesCount.text = String(question.likes)
+        viewsCount.text = String(question.views)
+        commentsCount.text = String(question.answercount)
+        tag1.text = question.tags[0]
+        tag2.text = question.tags[1]
+        tag3.text = question.tags[2]
+        
+    }
     
 }

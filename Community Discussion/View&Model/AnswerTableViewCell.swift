@@ -10,6 +10,13 @@ import UIKit
 
 class AnswerTableViewCell: UITableViewCell {
 
+    @IBOutlet var content: UITextView!
+    @IBOutlet var name: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var downvote: UIButton!
+    @IBOutlet var upvote: UIButton!
+    @IBOutlet var upvoteCount: UILabel!
+    @IBOutlet var downvoteCount: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +28,10 @@ class AnswerTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func cellConfigure(answer: Answer){
+        content.text = answer.content
+        name.text = answer.username
+        upvoteCount.text = String(answer.upvote)
+        downvoteCount.text = String(answer.downvote)
+    }
 }

@@ -42,6 +42,7 @@
 		26B4A09D258099060009A5DC /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4A09B258099060009A5DC /* AnswerTableViewCell.swift */; };
 		26B4A09E258099060009A5DC /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B4A09C258099060009A5DC /* AnswerTableViewCell.xib */; };
 		26C1EDE02549B83A00D51AA0 /* QuestionAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C1EDDF2549B83A00D51AA0 /* QuestionAnswerViewController.swift */; };
+		26EA62612594849600D23BAE /* AnswerSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EA62602594849600D23BAE /* AnswerSubmitViewController.swift */; };
 		26EBD2CB2582B00500972E25 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBD2CA2582B00500972E25 /* Helper.swift */; };
 		26EBD2CD2582B19700972E25 /* userDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBD2CC2582B19700972E25 /* userDatabase.swift */; };
 		26EBD2CF2582B41A00972E25 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EBD2CE2582B41A00972E25 /* extension.swift */; };
@@ -85,6 +86,7 @@
 		26B4A09B258099060009A5DC /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		26B4A09C258099060009A5DC /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
 		26C1EDDF2549B83A00D51AA0 /* QuestionAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerViewController.swift; sourceTree = "<group>"; };
+		26EA62602594849600D23BAE /* AnswerSubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerSubmitViewController.swift; sourceTree = "<group>"; };
 		26EBD2CA2582B00500972E25 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		26EBD2CC2582B19700972E25 /* userDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDatabase.swift; sourceTree = "<group>"; };
 		26EBD2CE2582B41A00972E25 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				26AA14002544C89E00BF4F8F /* NewPostViewController.swift */,
+				26EA62602594849600D23BAE /* AnswerSubmitViewController.swift */,
 			);
 			path = "New Post";
 			sourceTree = "<group>";
@@ -259,9 +262,9 @@
 				260290782580F30700D279F4 /* FirestoreReferenceManager.swift */,
 				26EBD2CC2582B19700972E25 /* userDatabase.swift */,
 				2692DA18258A95200025D13E /* questionDatabase.swift */,
+				2692DA1E258A9F9A0025D13E /* answerDatabase.swift */,
 				2692DA1A258A9EF40025D13E /* postDatabase.swift */,
 				2692DA1C258A9F0A0025D13E /* searchDatabase.swift */,
-				2692DA1E258A9F9A0025D13E /* answerDatabase.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				26C1EDE02549B83A00D51AA0 /* QuestionAnswerViewController.swift in Sources */,
 				26AA13F42544C83B00BF4F8F /* ProfileViewController.swift in Sources */,
 				260290752580A00100D279F4 /* AnswerViewController.swift in Sources */,
+				26EA62612594849600D23BAE /* AnswerSubmitViewController.swift in Sources */,
 				26533E6D2545CFE600EE7B1E /* MainProfileTableViewCell.swift in Sources */,
 				26AA13DD2544C76F00BF4F8F /* SceneDelegate.swift in Sources */,
 			);

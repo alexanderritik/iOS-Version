@@ -43,7 +43,7 @@ class NewPostViewController: UIViewController {
         guard let id = Auth.auth().currentUser?.uid else { return  }
         guard let name = UserDefaults.standard.string(forKey: "name") else { return }
         
-        let q1 = Question(answercount: 0, profileimg: "_", likes: 0, title: title, mainQuestion: mainQuestion, tags: [tag1 , tag2 , tag3], userId: id, name: name, views: 0, timestamp: currentTime)
+        let q1 = Question(id:"_" ,answercount: 0, profileimg: "_", likes: 0, title: title, mainQuestion: mainQuestion, tags: [tag1 , tag2 , tag3], userId: id, name: name, views: 0, timestamp: currentTime)
         
         questionDatabase.shared.sendQuestionToDatabase(question: q1) { result in
     

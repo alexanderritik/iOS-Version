@@ -66,14 +66,14 @@ extension userDatabase {
                     if let data = document.data(){
                         
                         // user detail
-                        guard let name = data[K.FUser.name] as? String else { return }
-                        guard let answer = data[K.FUser.total_answer] as? Int else { return }
-                        guard let views = data[K.FUser.total_views] as? Int else {return }
-                        guard let query = data[K.FUser.query_asked] as? Int else { return }
-                        guard let dob = data[K.FUser.dob] as? String else { return }
-                        guard let phone = data[K.FUser.phone] as? String else { return }
-                        guard let email = data[K.FUser.email] as? String else { return }
-                        guard let profleImg = data[K.FUser.profileimg] as? String else { return }
+                        let name = data[K.FUser.name] as? String ?? "_"
+                        let answer = data[K.FUser.total_answer] as? Int ?? 0
+                        let views = data[K.FUser.total_views] as? Int ?? 0
+                        let query = data[K.FUser.query_asked] as? Int ?? 0
+                        let dob = data[K.FUser.dob] as? String ?? "_"
+                        let phone = data[K.FUser.phone] as? String ?? "_"
+                        let email = data[K.FUser.email] as? String ?? "_"
+                        let profleImg = data[K.FUser.profileimg] as? String ?? "_"
                         
                         // about user
                         guard let about = data[K.FUser.about] as? [String:Any] else { return }
@@ -96,7 +96,6 @@ extension userDatabase {
                         let userabout = About(achievements: aboutAchievment, contribution: aboutContribution, profileLinks: profileLinkDetail, projects: aboutProjects, tags: aboutTags)
                         
                         let userDetail = User(query_asked: query, phone: phone, name: name, total_views: views, email: email, profileimg: profleImg, total_answer : answer , dob: dob, about: userabout)
-//                        print(userDetail)
                         
                         completion(.success(userDetail))
                     }
