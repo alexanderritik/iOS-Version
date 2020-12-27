@@ -41,14 +41,19 @@ class QuestionAnswerViewController: UIViewController {
         let vc = vcStoryboard.instantiateViewController(identifier: "AnswerPage") as! AnswerViewController
         let nav = UINavigationController(rootViewController: vc)
 //        nav.modalPresentationStyle = .fullScreen
+        vc.questionID = question?.id
+        vc.loadViewIfNeeded()
         present(nav , animated: true)
         
     }
     
     @IBAction func submitAnswer(_ sender: Any) {
-        print("Error")
-        UserDefaults.standard.set(question?.id , forKey: K.FQuestions.questionId)
-
+        let vcStoryboard = UIStoryboard(name: "QuestionPage", bundle: nil)
+        let vc = vcStoryboard.instantiateViewController(identifier: "SubmitAnswerPage") as! AnswerSubmitViewController
+        let nav = UINavigationController(rootViewController: vc)
+        vc.questionID = question?.id
+        vc.loadViewIfNeeded()
+        present(nav , animated: true)
     }
     
     func fillData(){

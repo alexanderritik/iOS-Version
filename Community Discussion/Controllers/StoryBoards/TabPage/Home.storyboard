@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aa3-Ob-v65">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aa3-Ob-v65">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +20,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mgg-bj-KEy">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedTableViewCell" id="YG0-3w-9ir" customClass="FeedTableViewCell" customModule="Community_Discussion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -30,6 +33,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ieV-eb-MDd"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ieV-eb-MDd" firstAttribute="bottom" secondItem="Mgg-bj-KEy" secondAttribute="bottom" id="NoZ-ll-3ey"/>
@@ -37,13 +41,18 @@
                             <constraint firstItem="Mgg-bj-KEy" firstAttribute="top" secondItem="ieV-eb-MDd" secondAttribute="top" id="ma0-La-Gw4"/>
                             <constraint firstItem="Mgg-bj-KEy" firstAttribute="leading" secondItem="ieV-eb-MDd" secondAttribute="leading" id="xwH-5f-ryj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ieV-eb-MDd"/>
                     </view>
                     <navigationItem key="navigationItem" id="yR9-eO-6Wq">
                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="FQd-hG-q1F">
                             <color key="tintColor" red="0.12549019610000001" green="0.1450980392" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="sideMenuDidTouch:" destination="1sl-0K-qHR" id="VwU-4j-Rac"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Load New Post" id="7kW-IE-mDn">
+                            <imageReference key="image" image="arrow.clockwise.circle.fill" catalog="system" renderingMode="original"/>
+                            <connections>
+                                <action selector="reloadPage:" destination="1sl-0K-qHR" id="NhE-q7-RCz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -80,9 +89,15 @@
                     <view key="view" contentMode="scaleToFill" id="uRa-b6-pNQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="db3-vH-nNn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Load New Post" id="YHD-bt-e8W">
+                            <imageReference key="image" image="arrow.clockwise.circle.fill" catalog="system" renderingMode="original"/>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGx-s7-cg0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,6 +105,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise.circle.fill" catalog="system" width="128" height="121"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

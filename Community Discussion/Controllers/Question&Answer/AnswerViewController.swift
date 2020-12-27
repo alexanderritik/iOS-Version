@@ -14,6 +14,8 @@ class AnswerViewController: UIViewController ,UITableViewDelegate , UITableViewD
     
     var answerArray = [Answer]()
     
+    var questionID : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -21,7 +23,7 @@ class AnswerViewController: UIViewController ,UITableViewDelegate , UITableViewD
         tableView.register(UINib(nibName: "AnswerTableViewCell", bundle: nil), forCellReuseIdentifier: "AnswerTableViewCell")
         // Do any additional setup after loading the view.
         
-        guard let questionId = UserDefaults.standard.string(forKey: K.FQuestions.questionId) else { return }
+        guard let questionId = questionID else { return }
             
         answerDatabase.shared.getAllAnswer(questionId: questionId) {[weak self] (result) in
             guard let strongSelf = self else{ return }

@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class AnswerSubmitViewController: UIViewController {
 
+    var questionID : String?
     
     @IBOutlet var answerTextView: UITextView!
     
@@ -30,13 +31,13 @@ class AnswerSubmitViewController: UIViewController {
         let currentTime = Date()
         guard let id = Auth.auth().currentUser?.uid else { return  }
         guard let name = UserDefaults.standard.string(forKey: "name") else { return }
-        guard let questionId = UserDefaults.standard.string(forKey: K.FQuestions.questionId) else { return }
+        guard let questionId = questionID else { return }
         let ans = Answer(upvote: 0, downvote: 0, userId: id, username: name, timestamp: currentTime, content: content, questionId: questionId)
         
         answerDatabase.shared.submitAnswer(answer: ans) { (result) in
             switch result {
                 
-            case .success(let _):
+            case .success(_):
                 print("submit to database")
             case .failure(_):
                 print("something is wrong")

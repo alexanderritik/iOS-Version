@@ -37,7 +37,7 @@ struct Question {
 extension questionDatabase {
     
     //MARK: To send question data to all the database
-    public func sendQuestionToDatabase(question : Question , completion : @escaping (Result<Bool, Error>)->Void){
+    public func sendQuestionToDatabase(question : Question , completion : @escaping (Result<Bool, Error>)->Void) {
         
         let questionRef = db.collection(K.FQuestions.question).document()
         let questionID = questionRef.documentID
@@ -76,7 +76,7 @@ extension questionDatabase {
         //send to user/questions database
         let qcollectId = db.collection(K.FUser.users).document(question.userId).collection("questions")
         qcollectId.addDocument(data: [
-            "questionID" : questionID,
+            "questionId" : questionID,
             "timestamp" : question.timestamp
         ]){ (error) in
             if error == nil {
@@ -88,14 +88,14 @@ extension questionDatabase {
     
     //MARK: To fetch in search view controller
     public func searchQuestion(search  : String){
-        
+          
     }
     
     //MARK: fetch question of particular user all questions
-    public func getAllQuestionOfUser(id: String ,  completition : @escaping (Result< Question , Error>)->Void){
+    public func getAllQuestionOfUser(id: String ,  completition : @escaping (Result< Question , Error>)->Void) {
     
         
-        let ref = db.collection(K.FUser.users).document(id).collection("questions").order(by: "timestamp")
+        let ref = db.collection(K.FUser.users).document(id).collection("questions").order(by: "timestamp", descending: true)
         
         ref.getDocuments() { (snapshot, error) in
             
@@ -106,8 +106,9 @@ extension questionDatabase {
                 for document in snap.documents {
                     
                     if let sol = document.data() as? [String:Any] , document.exists {
-                        self.getQuestionFromId(id: sol["questionID"] as! String) { (result) in
-                            
+                        print(sol)
+                        self.getQuestionFromId(id: sol["questionId"] as! String) { (result) in
+
                             switch result {
                             case .success(let data):
                                 if let data = data as? Question {
@@ -164,6 +165,28 @@ extension questionDatabase {
         
     }
     
+    
+    
+    //MARK: fetch question in homeView Controller
+    public func fetchQuestions() {
+
+        let ref = db.collection(K.FQuestions.question).order(by: "timestamp" , descending: true).limit(to: 5)
+        
+        ref.addSnapshotListener() { (snapshot, error) in
+            
+            if error == nil {
+                
+                guard let snap = snapshot else { return }
+                
+                for document in snap.documents {
+                    print(document.data())
+                }
+            }
+            
+            
+        }
+        
+    }
     
     
 }
