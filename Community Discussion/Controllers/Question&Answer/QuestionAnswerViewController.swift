@@ -25,6 +25,23 @@ class QuestionAnswerViewController: UIViewController {
      
         fillData()
         
+        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(usernameDidTouch))
+        tapgesture.numberOfTapsRequired = 1
+        username.addGestureRecognizer(tapgesture)
+        username.isUserInteractionEnabled = true
+    }
+    
+    @objc func usernameDidTouch(){
+        
+        print("username did touch")
+        
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        
+        let profileVC = profileStoryboard.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
+        
+        profileVC.uid = question?.userId
+        
+        present(profileVC , animated: true)
     }
     
     @objc func moveBack(){
@@ -50,11 +67,12 @@ class QuestionAnswerViewController: UIViewController {
     @IBAction func submitAnswer(_ sender: Any) {
         let vcStoryboard = UIStoryboard(name: "QuestionPage", bundle: nil)
         let vc = vcStoryboard.instantiateViewController(identifier: "SubmitAnswerPage") as! AnswerSubmitViewController
-        let nav = UINavigationController(rootViewController: vc)
         vc.questionID = question?.id
         vc.loadViewIfNeeded()
-        present(nav , animated: true)
+        present(vc , animated: true)
     }
+    
+    
     
     func fillData(){
         

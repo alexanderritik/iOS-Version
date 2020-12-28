@@ -17,6 +17,9 @@ class ProfileViewController: UIViewController {
     
     var qArray = [Question]()
     
+    var uid = Auth.auth().currentUser?.uid
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +28,6 @@ class ProfileViewController: UIViewController {
         
         qArray.removeAll()
         
-        let uid = Auth.auth().currentUser?.uid
         questionDatabase.shared.getAllQuestionOfUser(id: uid!) { [weak self] (result) in
             guard let strongSelf = self else { return }
             switch result {
@@ -87,7 +89,9 @@ extension ProfileViewController :  UITableViewDataSource, UITableViewDelegate {
             let profileHeaderTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ProfileHeaderTableViewCell") as! MainProfileTableViewCell
 
             profileHeaderTableViewCell.settingDelegate = self
-            userDatabase.shared.getUserDetail {(result) in
+            guard  let uid = uid else { return profileHeaderTableViewCell }
+            
+            userDatabase.shared.getUserDetail(uid: uid) {(result) in
                 switch result {
                 case.success(let user):
                     profileHeaderTableViewCell.fillDetail(user: user)

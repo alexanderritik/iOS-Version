@@ -53,59 +53,56 @@ public enum DatabaseErrors : Error {
 extension userDatabase {
 
     //MARK: get profile id user detail
-    public func getUserDetail(completion : @escaping (Result<User, Error>)->Void){
+    public func getUserDetail(uid : String , completion : @escaping (Result<User, Error>)->Void){
     
-        
-        if let uid = Auth.auth().currentUser?.uid {
+        let docRef = db.collection(K.FUser.users).document(uid)
+        docRef.getDocument { (document, error) in
             
-            let docRef = db.collection(K.FUser.users).document(uid)
-            docRef.getDocument { (document, error) in
-                
-                if let document = document, document.exists {
+            if let document = document, document.exists {
 //                    print(document.data())
-                    if let data = document.data(){
-                        
-                        // user detail
-                        let name = data[K.FUser.name] as? String ?? "_"
-                        let answer = data[K.FUser.total_answer] as? Int ?? 0
-                        let views = data[K.FUser.total_views] as? Int ?? 0
-                        let query = data[K.FUser.query_asked] as? Int ?? 0
-                        let dob = data[K.FUser.dob] as? String ?? "_"
-                        let phone = data[K.FUser.phone] as? String ?? "_"
-                        let email = data[K.FUser.email] as? String ?? "_"
-                        let profleImg = data[K.FUser.profileimg] as? String ?? "_"
-                        
-                        // about user
-                        guard let about = data[K.FUser.about] as? [String:Any] else { return }
-                        guard let aboutAchievment = about[K.FAbout.achievements] as? String else { return }
-                        guard let aboutContribution = about[K.FAbout.contribution] as? Int else { return }
-                        guard let aboutTags = about[K.FAbout.tags] as? [String] else { return}
-                        guard let aboutProjects = about[K.FAbout.projects] as? [String] else { return }
-
-                        // about user profile links
-                        guard let profileLink = about[K.FAbout.profileLinks] as? [String:Any] else { return }
-                        guard let profileLinksCC = profileLink[K.FProfileLinks.codechef] as? String else { return }
-                        guard let profileLinksCF = profileLink[K.FProfileLinks.codeforces] as? String else { return }
-                        guard let profileLinksGH = profileLink[K.FProfileLinks.github] as? String else { return }
-                        
-                        // it is used to chache the email locally with this key
-                        UserDefaults.standard.set(name, forKey: "name")
-                        UserDefaults.standard.set(uid, forKey: "uid")
-                        
-                        let profileLinkDetail = ProfileLinks(codechef: profileLinksCC, codeforces: profileLinksCF, github: profileLinksGH)
-                        let userabout = About(achievements: aboutAchievment, contribution: aboutContribution, profileLinks: profileLinkDetail, projects: aboutProjects, tags: aboutTags)
-                        
-                        let userDetail = User(query_asked: query, phone: phone, name: name, total_views: views, email: email, profileimg: profleImg, total_answer : answer , dob: dob, about: userabout)
-                        
-                        completion(.success(userDetail))
-                    }
+                if let data = document.data(){
                     
-                } else {
-                    print("Document does not exist")
-                    completion(.failure(DatabaseErrors.failedToFetch))
+                    // user detail
+                    let name = data[K.FUser.name] as? String ?? "_"
+                    let answer = data[K.FUser.total_answer] as? Int ?? 0
+                    let views = data[K.FUser.total_views] as? Int ?? 0
+                    let query = data[K.FUser.query_asked] as? Int ?? 0
+                    let dob = data[K.FUser.dob] as? String ?? "_"
+                    let phone = data[K.FUser.phone] as? String ?? "_"
+                    let email = data[K.FUser.email] as? String ?? "_"
+                    let profleImg = data[K.FUser.profileimg] as? String ?? "_"
+                    
+                    // about user
+                    guard let about = data[K.FUser.about] as? [String:Any] else { return }
+                    guard let aboutAchievment = about[K.FAbout.achievements] as? String else { return }
+                    guard let aboutContribution = about[K.FAbout.contribution] as? Int else { return }
+                    guard let aboutTags = about[K.FAbout.tags] as? [String] else { return}
+                    guard let aboutProjects = about[K.FAbout.projects] as? [String] else { return }
+
+                    // about user profile links
+                    guard let profileLink = about[K.FAbout.profileLinks] as? [String:Any] else { return }
+                    guard let profileLinksCC = profileLink[K.FProfileLinks.codechef] as? String else { return }
+                    guard let profileLinksCF = profileLink[K.FProfileLinks.codeforces] as? String else { return }
+                    guard let profileLinksGH = profileLink[K.FProfileLinks.github] as? String else { return }
+                    
+                    // it is used to chache the email locally with this key
+                    UserDefaults.standard.set(name, forKey: "name")
+                    UserDefaults.standard.set(uid, forKey: "uid")
+                    
+                    let profileLinkDetail = ProfileLinks(codechef: profileLinksCC, codeforces: profileLinksCF, github: profileLinksGH)
+                    let userabout = About(achievements: aboutAchievment, contribution: aboutContribution, profileLinks: profileLinkDetail, projects: aboutProjects, tags: aboutTags)
+                    
+                    let userDetail = User(query_asked: query, phone: phone, name: name, total_views: views, email: email, profileimg: profleImg, total_answer : answer , dob: dob, about: userabout)
+                    
+                    completion(.success(userDetail))
                 }
+                
+            } else {
+                print("Document does not exist")
+                completion(.failure(DatabaseErrors.failedToFetch))
             }
         }
-        
     }
+        
+    
 }

@@ -122,7 +122,6 @@ class HomeViewController: UIViewController ,MenuControllerDelegate {
             }
             self?.isPaginating = true
         }
-        
     }
     
 }
@@ -151,6 +150,7 @@ extension HomeViewController :  UITableViewDataSource, UITableViewDelegate  ,UIS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
             let feedTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell") as! FeedTableViewCell
+        
             feedTableViewCell.fillDetail(question : posts[indexPath.row])
         
             return feedTableViewCell
@@ -222,9 +222,6 @@ extension HomeViewController {
         
         let ref =  db.collection(K.FQuestions.question).order(by: "timestamp", descending: true).limit(to: 5)
         
-        ref.addSnapshotListener { (<#QuerySnapshot?#>, <#Error?#>) in
-            <#code#>
-        }
         
         ref.getDocuments {[weak self] (snapshot, error) in
             
@@ -258,7 +255,6 @@ extension HomeViewController {
             }
             completion(.success(true))
         }
-        completion(.success(false))
     }
     
     func loadMore(completion : @escaping (Result<Bool, Error>)->Void){

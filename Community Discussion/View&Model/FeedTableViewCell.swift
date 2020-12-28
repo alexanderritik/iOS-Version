@@ -39,7 +39,7 @@ class FeedTableViewCell: UITableViewCell {
         profileImage.layer.cornerRadius = profileImage.frame.width/2
         // Initialization code
     }
-
+    
     @IBAction func bookmarkDidTouch(_ sender: Any) {
     }
     
@@ -48,6 +48,7 @@ class FeedTableViewCell: UITableViewCell {
     
     @IBAction func likeButtonDidTouch(_ sender: Any) {
     }
+    
     
     func fillDetail(question : Question)
     {
