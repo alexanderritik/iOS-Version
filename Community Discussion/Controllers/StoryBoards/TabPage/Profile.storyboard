@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ara-ig-H8V">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ara-ig-H8V">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ssf-Am-US7">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProfileHeaderTableViewCell" rowHeight="289" id="0gZ-77-GmX" customClass="MainProfileTableViewCell" customModule="Community_Discussion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="289"/>
@@ -52,7 +54,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ude-3O-usp">
                                                             <rect key="frame" x="0.0" y="0.0" width="101.5" height="65"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DX-oh-UvM">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DX-oh-UvM">
                                                                     <rect key="frame" x="0.0" y="35" width="101.5" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="30" id="Brs-sd-rgl"/>
@@ -85,7 +87,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-Qt-4Fi">
                                                             <rect key="frame" x="131.5" y="0.0" width="101" height="65"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUA-67-nNY">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUA-67-nNY">
                                                                     <rect key="frame" x="0.0" y="35" width="101" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="BcZ-ez-L7F"/>
@@ -116,7 +118,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgL-K0-z5l">
                                                             <rect key="frame" x="262.5" y="0.0" width="101.5" height="65"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bg-37-yLh">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bg-37-yLh">
                                                                     <rect key="frame" x="0.0" y="35" width="101.5" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="9Vq-Xc-Ceo"/>
@@ -180,6 +182,7 @@
                                             <outlet property="answerCount" destination="2Ea-jO-xWJ" id="t1E-8l-RbO"/>
                                             <outlet property="profilePic" destination="QJl-gK-vg9" id="xwR-p6-kGd"/>
                                             <outlet property="questionCount" destination="PQJ-U2-y4I" id="oCq-RE-Zv5"/>
+                                            <outlet property="settingButton" destination="4r4-yd-vje" id="ujd-IW-dzW"/>
                                             <outlet property="userEmail" destination="OqA-jk-x8B" id="Mcj-zn-3eU"/>
                                             <outlet property="username" destination="4Ba-k8-xTA" id="hqL-gn-kvq"/>
                                             <outlet property="viewsCount" destination="PUL-Ho-CXR" id="ORD-bb-YEt"/>
@@ -219,14 +222,14 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="CzY-N4-kNO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CzY-N4-kNO" firstAttribute="trailing" secondItem="ssf-Am-US7" secondAttribute="trailing" id="99B-O1-YBx"/>
                             <constraint firstItem="ssf-Am-US7" firstAttribute="top" secondItem="CzY-N4-kNO" secondAttribute="top" id="Nc8-XG-mQ6"/>
                             <constraint firstItem="ssf-Am-US7" firstAttribute="leading" secondItem="CzY-N4-kNO" secondAttribute="leading" id="g4D-sY-bNN"/>
                             <constraint firstItem="CzY-N4-kNO" firstAttribute="bottom" secondItem="ssf-Am-US7" secondAttribute="bottom" id="xTz-Y4-Mef"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="CzY-N4-kNO"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="ssf-Am-US7" id="z2E-t6-Pee"/>
@@ -241,6 +244,9 @@
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="profile" width="64" height="64"/>
         <image name="settingIcon" width="18" height="4"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

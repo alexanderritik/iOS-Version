@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
     
     var uid = Auth.auth().currentUser?.uid
     
+    var screen = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-           
+        tableView.reloadSections(IndexSet(integer: 0), with: .none)
     }
 
 }
@@ -91,10 +92,13 @@ extension ProfileViewController :  UITableViewDataSource, UITableViewDelegate {
             profileHeaderTableViewCell.settingDelegate = self
             guard  let uid = uid else { return profileHeaderTableViewCell }
             
-            userDatabase.shared.getUserDetail(uid: uid) {(result) in
+            userDatabase.shared.getUserDetail(uid: uid) {[weak self](result) in
                 switch result {
                 case.success(let user):
                     profileHeaderTableViewCell.fillDetail(user: user)
+                    if self?.screen == 1 {
+                    profileHeaderTableViewCell.settingButton.isHidden = true
+                    }
                 case .failure(let error):
                     print("unable to downlaod chats \(error)")
                 }

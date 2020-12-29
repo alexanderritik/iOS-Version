@@ -40,7 +40,7 @@ class QuestionAnswerViewController: UIViewController {
         let profileVC = profileStoryboard.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
         
         profileVC.uid = question?.userId
-        
+        profileVC.screen = 1
         present(profileVC , animated: true)
     }
     

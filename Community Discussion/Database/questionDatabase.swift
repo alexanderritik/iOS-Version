@@ -56,6 +56,9 @@ extension questionDatabase {
             K.FQuestions.views : question.views
             ] as [String : Any]
         
+        //update number of question
+        db.collection(K.FUser.users).document(question.userId).setData([K.FUser.query_asked : FieldValue.increment(Int64(1))], merge: true)
+        
         // send to question database
         questionRef.setData(data, merge: true ){ (error) in
             if error == nil {

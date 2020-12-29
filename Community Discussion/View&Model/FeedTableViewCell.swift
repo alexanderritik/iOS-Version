@@ -47,6 +47,7 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     @IBAction func likeButtonDidTouch(_ sender: Any) {
+        print("Likes button did touch in the ")
     }
     
     
@@ -54,6 +55,7 @@ class FeedTableViewCell: UITableViewCell {
     {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
+        formatter.dateStyle = .medium
         let dateString = formatter.string(from: question.timestamp)
         
         username.text = question.name

@@ -83,6 +83,12 @@ extension answerDatabase {
         
         let answerID = answerRef.documentID
         
+        //update number of question
+        db.collection(K.FQuestions.question).document(answer.questionId).setData([K.FQuestions.answercount : FieldValue.increment(Int64(1))], merge: true)
+        
+        //update user total answers
+        db.collection(K.FUser.users).document(answer.userId).setData([K.FUser.total_answer : FieldValue.increment(Int64(1))], merge: true)
+        
         ///submit to answer database
         answerRef.setData(data, merge: true ){ (error) in
             if error == nil {

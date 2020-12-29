@@ -18,6 +18,9 @@ class AnswerViewController: UIViewController ,UITableViewDelegate , UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Answers"
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "AnswerTableViewCell", bundle: nil), forCellReuseIdentifier: "AnswerTableViewCell")
@@ -35,7 +38,7 @@ class AnswerViewController: UIViewController ,UITableViewDelegate , UITableViewD
                         strongSelf.tableView.reloadData()
                     }
                 case .failure(_):
-                    print("answer canot fethc")
+                    print("answer canot fetch")
             }
         }
         

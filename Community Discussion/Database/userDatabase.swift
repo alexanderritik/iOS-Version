@@ -85,9 +85,12 @@ extension userDatabase {
                     guard let profileLinksCF = profileLink[K.FProfileLinks.codeforces] as? String else { return }
                     guard let profileLinksGH = profileLink[K.FProfileLinks.github] as? String else { return }
                     
-                    // it is used to chache the email locally with this key
-                    UserDefaults.standard.set(name, forKey: "name")
-                    UserDefaults.standard.set(uid, forKey: "uid")
+                    if uid == Auth.auth().currentUser?.uid {
+                        // it is used to chache the email locally with this key
+                        UserDefaults.standard.set(name, forKey: "name")
+                        UserDefaults.standard.set(uid, forKey: "uid")
+                    }
+
                     
                     let profileLinkDetail = ProfileLinks(codechef: profileLinksCC, codeforces: profileLinksCF, github: profileLinksGH)
                     let userabout = About(achievements: aboutAchievment, contribution: aboutContribution, profileLinks: profileLinkDetail, projects: aboutProjects, tags: aboutTags)

@@ -21,6 +21,7 @@ class MainProfileTableViewCell: UITableViewCell {
     @IBOutlet var answerCount: UILabel!
     
     @IBOutlet var viewsCount: UILabel!
+    @IBOutlet var settingButton: UIButton!
     
     var settingDelegate : ProfileSettingDelegate?
     
@@ -31,6 +32,8 @@ class MainProfileTableViewCell: UITableViewCell {
         profilePic.layer.borderColor = UIColor.gray.cgColor
         profilePic.layer.cornerRadius = profilePic.frame.width/2
         profilePic.layer.borderWidth = CGFloat(3)
+        
+        settingButton.isHidden = true
     }
     
     @IBAction func settingButtonDidTouch(_ sender: Any) {
@@ -41,6 +44,7 @@ class MainProfileTableViewCell: UITableViewCell {
     
     func fillDetail(user : User)
     {
+        settingButton.isHidden = false
         username.text = user.name
         userEmail.text = user.email
         questionCount.text = String(user.query_asked)
