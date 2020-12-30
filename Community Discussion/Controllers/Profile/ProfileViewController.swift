@@ -118,6 +118,8 @@ extension ProfileViewController :  UITableViewDataSource, UITableViewDelegate {
             
             let feedTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell") as! FeedTableViewCell
             
+            feedTableViewCell.questionId = qArray[indexPath.row].id
+            
             feedTableViewCell.fillDetail(question : qArray[indexPath.row])
             
             return feedTableViewCell

@@ -192,6 +192,71 @@ extension questionDatabase {
     }
     
     
+    //like the post
+    func likePost(questionID : String  , hit: Int , completition : @escaping (Result< Bool , Error>)->Void) {
+        
+        if let id = Auth.auth().currentUser?.uid {
+            
+        db.collection(K.FQuestions.question).document(questionID).collection("likes").document(id).getDocument { [weak self] (snapshot, error) in
+            if error == nil {
+                guard let snapshot = snapshot else { return }
+                
+                if let _ = snapshot.data() {
+                    print("You already Like post")
+                    completition(.success(true))
+                }
+
+                else if hit == 0 {
+                    print("like is going done")
+                    self?.db.collection(K.FQuestions.question).document(questionID).collection("likes").document(id).setData(["timestamp" : Date()])
+                    
+                    self?.db.collection(K.FQuestions.question).document(questionID).setData([K.FQuestions.likes : FieldValue.increment(Int64(1))], merge: true)
+                    
+                    completition(.success(true))
+                    }
+                
+                }
+            }
+        }
+
+    }
+    
+    
+    //view the post
+    func viewUniquePost(questionID : String , hit: Int  , completition : @escaping (Result< Bool , Error>)->Void) {
+        guard let id = Auth.auth().currentUser?.uid  else { return }
+        
+        db.collection(K.FQuestions.question).document(questionID).collection("views").document(id).getDocument { [weak self] (snapshot, error) in
+            if error == nil {
+                guard let snapshot = snapshot else { return }
+                
+                if let _ = snapshot.data() {
+                    print("You already views")
+                    completition(.success(true))
+                }
+                
+                
+                else if hit == 0 {
+                    print("views is going done")
+                    self?.db.collection(K.FQuestions.question).document(questionID).collection("views").document(id).setData(["timestamp" : Date()])
+                    
+                    self?.db.collection(K.FQuestions.question).document(questionID).setData([K.FQuestions.views : FieldValue.increment(Int64(1))], merge: true)
+                    completition(.success(false))
+                }
+                
+                else {
+                    print("You havenot views it " , questionID)
+                    completition(.success(false))
+                }
+                
+                
+            }
+        }
+        
+    }
+        
+    
+    
 }
 
 

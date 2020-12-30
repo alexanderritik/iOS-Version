@@ -99,7 +99,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="7Ar-RM-oIT"/>
                                                     <constraint firstAttribute="height" constant="30" id="NUg-bM-wR5"/>
                                                 </constraints>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.12549019610000001" green="0.1450980392" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" image="hand.thumbsup" catalog="system"/>
                                                 <connections>
                                                     <action selector="likeButtonDidTouch:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZVc-Ic-2gR"/>
@@ -256,6 +256,7 @@
                 <outlet property="commentsCount" destination="fsW-LN-x3b" id="ejw-PX-cwm"/>
                 <outlet property="containerView" destination="FQC-9A-dAp" id="m8c-h3-XdM"/>
                 <outlet property="datePosted" destination="h5d-PB-4D1" id="BIb-HJ-8Dn"/>
+                <outlet property="likeButtonImage" destination="Ldf-oB-yrw" id="gx8-IT-UoN"/>
                 <outlet property="likesCount" destination="VeE-nL-1cN" id="exA-Ls-Y0t"/>
                 <outlet property="mainQuestion" destination="FnI-KC-KcC" id="AaB-vJ-Lze"/>
                 <outlet property="profileImage" destination="b8n-5B-oB0" id="Qcu-eD-YbZ"/>
@@ -263,6 +264,7 @@
                 <outlet property="tag2" destination="ZDG-Xf-M2p" id="AVG-Xa-ZnE"/>
                 <outlet property="tag3" destination="J2A-Xg-aUB" id="YIg-qV-1v5"/>
                 <outlet property="username" destination="0AX-cR-EFO" id="KRi-H1-CCh"/>
+                <outlet property="viewButtonImage" destination="7i2-4Z-vVT" id="ojm-ZI-BkJ"/>
                 <outlet property="viewsCount" destination="mra-mB-eOa" id="PdA-xq-PQx"/>
             </connections>
             <point key="canvasLocation" x="63.768115942028992" y="140.95982142857142"/>

@@ -29,6 +29,7 @@ class QuestionAnswerViewController: UIViewController {
         tapgesture.numberOfTapsRequired = 1
         username.addGestureRecognizer(tapgesture)
         username.isUserInteractionEnabled = true
+        
     }
     
     @objc func usernameDidTouch(){
@@ -85,6 +86,21 @@ class QuestionAnswerViewController: UIViewController {
         username.text = q.name
         mainQuestion.text = q.mainQuestion
         dateasked.text = dateString
+        
+        //sent unique views to sytem
+        questionDatabase.shared.viewUniquePost(questionID: q.id  , hit: 0 , completition: { (result) in
+            switch result {
+            
+            case .success(let cond):
+                if cond == true {
+                    print("Already views it")
+                }else{
+                    print("no views it")
+                }
+            case .failure(_):
+                print("there is some error")
+            }
+        })
         
     }
 
