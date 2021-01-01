@@ -151,7 +151,7 @@ extension HomeViewController :  UITableViewDataSource, UITableViewDelegate  ,UIS
         
             let feedTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell") as! FeedTableViewCell
         
-        feedTableViewCell.questionId = posts[indexPath.row].id
+            feedTableViewCell.questionId = posts[indexPath.row].id
             
             feedTableViewCell.fillDetail(question : posts[indexPath.row])
         

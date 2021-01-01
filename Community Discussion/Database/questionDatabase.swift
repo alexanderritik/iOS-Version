@@ -212,7 +212,7 @@ extension questionDatabase {
                     
                     self?.db.collection(K.FQuestions.question).document(questionID).setData([K.FQuestions.likes : FieldValue.increment(Int64(1))], merge: true)
                     
-                    completition(.success(true))
+                    completition(.success(false))
                     }
                 
                 }
@@ -241,7 +241,7 @@ extension questionDatabase {
                     self?.db.collection(K.FQuestions.question).document(questionID).collection("views").document(id).setData(["timestamp" : Date()])
                     
                     self?.db.collection(K.FQuestions.question).document(questionID).setData([K.FQuestions.views : FieldValue.increment(Int64(1))], merge: true)
-                    completition(.success(false))
+                    completition(.success(true))
                 }
                 
                 else {

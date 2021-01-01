@@ -58,8 +58,8 @@ class FeedTableViewCell: UITableViewCell {
         questionDatabase.shared.likePost(questionID: questionID , hit: 0) { [weak self] (result) in
             switch result {
             
-            case .success(_):
-                if let likes = self?.likesCount.text , let noLikes = Int(likes){
+            case .success(let cond):
+                if cond == false , let likes = self?.likesCount.text , let noLikes = Int(likes){
                     self?.likesCount.text = String(noLikes+1)
                     self?.likeButtonImage.tintColor = UIColor.systemBlue
                 }
